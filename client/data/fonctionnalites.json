@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "titre": "Fonctionnalité",
+      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "img": "/card_bg.svg"
+    },
+    {
+      "titre": "Fonctionnalité",
+      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "img": "/card_bg.svg"
+    },
+    {
+      "titre": "Fonctionnalité",
+      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "img": "/card_bg.svg"
+    }
+  ]
+}
