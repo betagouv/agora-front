@@ -7,17 +7,20 @@ const props = defineProps<{
 <template>
   <div class="fr-col-12 fr-col-md-4">
     <div class="agora-carte fr-p-2w">
-      <img :src="data.img"
-           class="agora-carte__img"
-           alt="Image d'illustration de l'application Agora"
-           title="Image d'illustration de l'application Agora"
-           v-if="data.img"
-      />
+      <img
+        v-if="data.img"
+        :src="data.img"
+        class="agora-carte__img"
+        alt="Image d'illustration de l'application Agora"
+        title="Image d'illustration de l'application Agora"
+      >
       <h6 class="agora-carte__titre fr-my-2w">
         {{ data.titre }}
       </h6>
-      <div class="agora-carte__desc" v-html="data.description">
-      </div>
+      <div
+        class="agora-carte__desc"
+        v-html="data.description"
+      />
     </div>
   </div>
 </template>

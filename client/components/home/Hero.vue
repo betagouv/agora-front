@@ -8,29 +8,34 @@
       <div>
         <h1>Nom de l'application</h1>
         <p>
-          Proposition de valeur de l’application.<br/>
+          Proposition de valeur de l’application.<br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12 fr-col-lg-6">
-            <DsfrButton icon="agora-apple"
-                        label="Télécharger sur l’AppStore"
-                        secondary/>
+            <DsfrButton
+              icon="agora-apple"
+              label="Télécharger sur l’AppStore"
+              secondary
+            />
           </div>
           <div class="fr-col-12 fr-col-lg-6">
-            <DsfrButton icon="agora-google"
-                        label="Télécharger pour GooglePlay"
-                        secondary/>
+            <DsfrButton
+              icon="agora-google"
+              label="Télécharger pour GooglePlay"
+              secondary
+            />
           </div>
         </div>
       </div>
     </div>
     <div class="fr-col-12 fr-col-md-6">
-      <img src="/hero.png"
-           style="max-width: 100%"
-           alt="Image d'illustration de l'application Agora"
-           title="Image d'illustration de l'application Agora"
-      />
+      <img
+        src="/hero.png"
+        style="max-width: 100%"
+        alt="Image d'illustration de l'application Agora"
+        title="Image d'illustration de l'application Agora"
+      >
     </div>
   </div>
 </template>

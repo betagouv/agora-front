@@ -5,11 +5,12 @@
 <template>
   <div class="fr-grid-row">
     <div class="fr-col-12 fr-col-md-6">
-      <img src="/illustration.png"
-           style="max-width: 100%"
-           alt="Image d'illustration de l'application Agora"
-           title="Image d'illustration de l'application Agora"
-      />
+      <img
+        src="/illustration.png"
+        style="max-width: 100%"
+        alt="Image d'illustration de l'application Agora"
+        title="Image d'illustration de l'application Agora"
+      >
     </div>
     <div class="fr-col-12 fr-col-md-6 fr-grid-row fr-grid-row--middle">
       <div>

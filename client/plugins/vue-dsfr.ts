@@ -7,5 +7,5 @@ const icons = [
 ]
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(VueDsfr, {icons})
+  nuxtApp.vueApp.use(VueDsfr, { icons })
 })

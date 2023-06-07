@@ -20,9 +20,9 @@ const preferences = reactive({
 })
 
 onMounted(() => {
-  const {theme, scheme, setScheme} = useScheme()
+  const { theme, scheme, setScheme } = useScheme()
   // preferences.scheme = 'dark';
-  preferences.scheme = 'light';
+  preferences.scheme = 'light'
 
   watchEffect(() => {
     preferences.theme = theme.value
@@ -40,9 +40,10 @@ onMounted(() => {
     :logo-text="logoText"
   />
   <div class="fr-container fr-mb-8w">
-    <slot/>
+    <slot />
   </div>
-  <DsfrFooter :logo-text="logoText"
-              :mandatoryLinks="mandatoryLinks"
+  <DsfrFooter
+    :logo-text="logoText"
+    :mandatory-links="mandatoryLinks"
   />
 </template>

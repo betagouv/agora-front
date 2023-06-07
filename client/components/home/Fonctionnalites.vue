@@ -5,8 +5,9 @@ import fonctionnalites from '../../data/fonctionnalites.json'
 
 <template>
   <div class="fr-grid-row fr-grid-row fr-grid-row--gutters fr-grid-row--center">
-    <Carte v-for="fonctionnalite in fonctionnalites.data"
-           :data="fonctionnalite"
+    <Carte
+      v-for="fonctionnalite in fonctionnalites.data"
+      :data="fonctionnalite"
     />
   </div>
 </template>
