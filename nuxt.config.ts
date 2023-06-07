@@ -5,32 +5,32 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
-      title: `Agora`,
+      title: 'Agora',
       meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: `Avec Agora, bla bla bla.`
+          content: 'Avec Agora, bla bla bla.',
         },
-        {name: 'format-detection', content: 'telephone=no'},
-        {property: 'og:title', content: `Agora`},
+        { name: 'format-detection', content: 'telephone=no' },
+        { property: 'og:title', content: 'Agora' },
         {
           property: 'og:description',
-          content: `Avec Agora, bla bla bla.`
+          content: 'Avec Agora, bla bla bla.',
         },
-        {property: 'og:type', content: 'website'},
-        {property: 'og:url', content: `https://${process.env.DOMAIN_NAME}`},
-        {property: 'og:locale', content: 'fr_FR'},
-        {property: 'og:image', content: `https://${process.env.DOMAIN_NAME}/favicon.svg`},
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: `https://${process.env.DOMAIN_NAME}` },
+        { property: 'og:locale', content: 'fr_FR' },
+        { property: 'og:image', content: `https://${process.env.DOMAIN_NAME}/favicon.svg` },
       ],
       link: [
-        {rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg'}
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       ],
       htmlAttrs: {
-        lang: 'fr'
-      }
-    }
+        lang: 'fr',
+      },
+    },
   },
   css: [
     '@gouvfr/dsfr/dist/dsfr.min.css',
@@ -44,9 +44,25 @@ export default defineNuxtConfig({
     '**/*.cy.*',
   ],
   srcDir: 'client/',
+  imports: {
+    autoImport: true,
+  },
+  modules: [
+    process.env.APP_ENV !== 'local' ? '@nuxtjs/robots' : '',
+    'nuxt-simple-sitemap',
+  ],
   runtimeConfig: {
     public: {
-      domainName: process.env.DOMAIN_NAME
-    }
+      domainName: process.env.DOMAIN_NAME,
+    },
+  },
+  robots: {
+    rules: {
+      UserAgent: '*',
+      Disallow: process.env.APP_ENV === 'prod' ? '' : '/',
+    },
+  },
+  sitemap: {
+    siteUrl: `https://${process.env.DOMAIN_NAME}`,
   },
 })
