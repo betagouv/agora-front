@@ -1,0 +1,11 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+      {
+        "appID": "PR958DC548.fr.gouv.agora",
+        "paths": ["*"]
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useScheme } from '@gouvminint/vue-dsfr'
 
-const logoText = ['Intitulé']
+const logoText = ['Gouvernement']
 const a11yCompliance = 'Non conforme'
 const operatorImgSrc: string = '/logo_agora.svg'
 const operatorImgAlt: string = 'Logo du produit Agora'
