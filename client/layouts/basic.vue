@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { useScheme } from '@gouvminint/vue-dsfr'
 
-const serviceTitle = 'Agora'
-const serviceDescription = 'Description du service'
 const logoText = ['Intitulé']
 const a11yCompliance = 'Non conforme'
+const operatorImgSrc: string = '/logo_agora.svg'
+const operatorImgAlt: string = 'Logo du produit Agora'
+const operatorImgStyle: any = {
+  'max-height': '80px'
+}
 
 const mandatoryLinks: any[] = [{
   label: `Accessibilité : ${a11yCompliance}`,
@@ -23,7 +26,7 @@ const preferences = reactive({
 })
 
 onMounted(() => {
-  const { theme, scheme, setScheme } = useScheme()
+  const {theme, scheme, setScheme} = useScheme()
   // preferences.scheme = 'dark';
   preferences.scheme = 'light'
 
@@ -36,17 +39,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <DsfrHeader
-    v-model="query"
-    :service-title="serviceTitle"
-    :service-description="serviceDescription"
-    :logo-text="logoText"
+  <DsfrHeader :logo-text="logoText"
+              :operatorImgSrc="operatorImgSrc"
+              :operatorImgAlt="operatorImgAlt"
+              :operatorImgStyle="operatorImgStyle"
   />
   <div class="fr-container fr-mb-8w">
-    <slot />
+    <slot/>
   </div>
-  <DsfrFooter
-    :logo-text="logoText"
-    :mandatory-links="mandatoryLinks"
+  <DsfrFooter :logo-text="logoText"
+              :mandatory-links="mandatoryLinks"
+              :operatorImgSrc="operatorImgSrc"
+              :operatorImgAlt="operatorImgAlt"
+              :operatorImgStyle="operatorImgStyle"
   />
 </template>
