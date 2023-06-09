@@ -6,25 +6,39 @@
   <div class="hero fr-grid-row">
     <div class="fr-col-12 fr-col-md-6 fr-grid-row fr-grid-row--middle">
       <div>
-        <h1>Nom de l'application</h1>
+        <h1>Agora</h1>
         <p>
           Proposition de valeur de l’application.<br>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12 fr-col-lg-6">
-            <DsfrButton
-              icon="agora-apple"
-              label="Télécharger sur l’AppStore"
-              secondary
-            />
+            <a
+              class="fr-btn fr-btn--secondary"
+              href="https://apps.apple.com/app/6449599025"
+              target="_blank"
+              rel="noopener"
+            >
+              <VIcon
+                name="agora-apple"
+                class="fr-mr-1w"
+              />
+              Télécharger sur l’AppStore
+            </a>
           </div>
           <div class="fr-col-12 fr-col-lg-6">
-            <DsfrButton
-              icon="agora-google"
-              label="Télécharger pour GooglePlay"
-              secondary
-            />
+            <a
+              class="fr-btn fr-btn--secondary"
+              href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
+              target="_blank"
+              rel="noopener"
+            >
+              <VIcon
+                name="agora-google"
+                class="fr-mr-1w"
+              />
+              Télécharger pour GooglePlay
+            </a>
           </div>
         </div>
       </div>
@@ -65,6 +79,10 @@
   .fr-btn {
     width: 100%;
     justify-content: center;
+
+    &:after {
+      display: none;
+    }
   }
 }
 
