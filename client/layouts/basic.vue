@@ -43,6 +43,7 @@ onMounted(() => {
               :operatorImgSrc="operatorImgSrc"
               :operatorImgAlt="operatorImgAlt"
               :operatorImgStyle="operatorImgStyle"
+              serviceTitle=" "
   />
   <div class="fr-container fr-mb-8w">
     <slot/>
