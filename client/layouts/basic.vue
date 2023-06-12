@@ -18,6 +18,15 @@ const mandatoryLinks: any[] = [{
 }, {
   label: 'Politique de confidentialité',
   to: '/politique-confidentialite',
+}, {
+  label: 'Conditions générales d\'utilisation',
+  to: '/cgu',
+}, {
+  label: 'Charte de participation',
+  to: '/charte-participation',
+}, {
+  label: 'Retours sur l\'application',
+  to: '/retours-application',
 }]
 
 const preferences = reactive({
