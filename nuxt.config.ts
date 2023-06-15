@@ -57,6 +57,25 @@ export default defineNuxtConfig({
       domainName: process.env.DOMAIN_NAME,
     },
   },
+  hooks: {
+    'build:manifest': (manifest) => {
+      // Suppression du prefetch pour les icônes
+      for (const key in manifest) {
+        const file = manifest[key]
+
+        if (file.assets) {
+          file.assets = file.assets
+            .filter(
+              (asset: string) =>
+                !asset.endsWith('.webp') &&
+                !asset.endsWith('.jpg') &&
+                !asset.endsWith('.png') &&
+                !asset.endsWith('.svg')
+            )
+        }
+      }
+    }
+  },
   robots: {
     rules: {
       UserAgent: '*',
