@@ -219,7 +219,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
           <tbody>
           <tr>
             <td>
-              Matomo
+              Empreinte Digital 
             </td>
             <td>
               France
@@ -228,11 +228,11 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
               Cookie mesure d’audience
             </td>
             <td>
-              <a href="https://fr.matomo.org/privacy-policy/"
+              <a href="https://empreintedigitale.fr/"
                  target="_blank" rel="external">
-                https://fr.matomo.org/privacy-policy/
+                https://empreintedigitale.fr/
               </a><br/>
-              Solution installée et opérée par la Direction interministérielle du numérique
+              Solution Matomo installée et opérée par Empreinte Digital pour le compte de la Direction interministérielle du numérique
             </td>
           </tr>
           <tr>
