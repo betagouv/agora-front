@@ -2,7 +2,7 @@
 
 ## Description
 
-Agora
+Application de participation citoyenne
 
 ## Installation
 
