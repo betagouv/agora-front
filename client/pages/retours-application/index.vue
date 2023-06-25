@@ -18,4 +18,18 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Retours sur l
   <div class="fr-mt-8w">
     <h1>Retours sur l'application</h1>
   </div>
+  <div class="fr-grid-row fr-grid-row--center iframe-wrapper">
+    <iframe iItemId='frameSphinx'
+            src='https://cvip.sphinxonline.net/surveyserver/s/Experience_usagers/AGORA_RETEX/questionnaire.htm?ORIGINE_SAISIE=iframe'
+            frameborder='0' scrolling='auto' marginheight='0' marginwidth='0'></iframe>    
+  </div>
 </template>
+
+<style lang="scss">
+.iframe-wrapper {
+  iframe {
+    width: 100%;
+    height: 800px;
+  }
+}
+</style>
