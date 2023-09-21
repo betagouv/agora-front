@@ -17,9 +17,9 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
   <DsfrBreadcrumb :links="links" />
   <div class="fr-mt-8w">
     <h1>Déclaration d’accessibilité</h1>
-    <p>Établie le <span>07 juin 2023</span>.</p>
+    <p>Établie le <span>20 septembre 2023</span>.</p>
     <p>
-      Le <span>Ministère de la Transition écologique et de la Cohésion des territoires</span> s’engage à rendre son service accessible,
+      La direction interministérielle de la transformation publique (DITP) s’engage à rendre son service accessible,
       conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005.
     </p>
     <p>Cette déclaration d’accessibilité s’applique à <strong>Agora</strong><span> (<span>{{ domainName }}</span>)</span>.</p>
@@ -38,8 +38,10 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
       contenu sous une autre forme.
     </p>
     <ul>
-      <li>E-mail : contact@{{ domainName }}</li>
+      <li>E-mail : agora@beta.gouv.fr</li>
+      <li>Adresse : 20 avenue de Ségur, 75007 Paris</li>
     </ul>
+    Nous essayons de répondre dans les 30 jours.
     <h2>Voie de recours</h2>
     <p>
       Cette procédure est à utiliser dans le cas suivant&nbsp;: vous avez signalé au responsable du site internet un défaut d’accessibilité
@@ -70,7 +72,7 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
     </ul>
     <hr>
     <p>
-      Cette déclaration d’accessibilité a été créé le <span>10 mai 2023</span> grâce au <a
+      Cette déclaration d’accessibilité a été créé le <span>20 septembre 2023</span> grâce au <a
         href="https://betagouv.github.io/a11y-generateur-declaration/"
         target="_blank"
         rel="external"
