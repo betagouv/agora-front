@@ -13,6 +13,9 @@ const mandatoryLinks: any[] = [{
   label: `Accessibilité : ${a11yCompliance}`,
   to: '/accessibilite',
 }, {
+  label: 'Mentions légales',
+  to: '/mentions-legales',
+}, {
   label: 'Politique de confidentialité',
   to: '/politique-confidentialite',
 }, {
