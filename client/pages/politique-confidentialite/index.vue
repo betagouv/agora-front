@@ -16,12 +16,12 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
 <template>
   <DsfrBreadcrumb :links="links"/>
   <div class="fr-mt-8w">
-    <h1>Politique de confidentialité Provisoire - en attente validation</h1>
+    <h1>Politique de confidentialité</h1>
     <h2>Qui est responsable d’Agora ?</h2>
     <p>
       Agora est une application gouvernementale visant à faire dialoguer les citoyens avec le Gouvernement.<br/><br/>
       Elle permet aux citoyens de participer à des consultations initiées par les ministères et de poser des questions au Gouvernement sur
-      l’action gouvernementale<br/><br/>
+      l’action gouvernementale.<br/><br/>
       Agora est développée au sein de l’incubateur de services numériques de la Direction interministérielle du numérique - Beta.gouv et
       mise en œuvre par, et sous la responsabilité, de la délégation interministérielle de la transformation publique (DITP).
     </p>
@@ -177,10 +177,14 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
           <ul>
             <li>Scalingo, et son partenaire IaaS Outscale, fournissant une infrastructure certifiée SecNumCloud, plus haut niveau de
               sécurité conseillé par l'ANSSI, pour l’infogérance et l’hébergement des données ;
-              https://scalingo.com/fr/data-processing-agreement ;
+              <a href="https://scalingo.com/fr/data-processing-agreement"
+                 target="_blank"
+                 rel="external">https://scalingo.com/fr/data-processing-agreement</a> ;
             </li>
             <li>Baleen, fournissant une infrastructure qui garantit la résilience, la sécurité et la performance de l’application en
-              protégeant vos données contre toute cyberattaque : https://baleen.cloud/confidentialite
+              protégeant vos données contre toute cyberattaque : <a href="https://baleen.cloud/confidentialite"
+                                                                    target="_blank"
+                                                                    rel="external">https://baleen.cloud/confidentialite</a>
             </li>
           </ul>
         </li>

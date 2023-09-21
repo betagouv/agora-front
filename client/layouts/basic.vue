@@ -49,7 +49,8 @@ onMounted(() => {
               :operatorImgSrc="operatorImgSrc"
               :operatorImgAlt="operatorImgAlt"
               :operatorImgStyle="operatorImgStyle"
-              serviceTitle=" "
+              serviceTitle="Agora"
+              serviceDescription="La première application qui fait dialoguer les citoyens et le Gouvernement"
   />
   <div class="fr-container fr-mb-8w">
     <slot/>

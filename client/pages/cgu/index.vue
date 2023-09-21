@@ -205,18 +205,14 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Conditions g�
       sexuelle d'une personne physique.<br/><br/>
       Toute information transmise par l'Utilisateur est de sa seule responsabilité. L'Utilisateur s'engage à ne pas publier des contenus ou
       des informations contraires aux dispositions légales et réglementaires en vigueur. Dans le cas contraire, l’Editeur se réserve le
-      droit
-      de supprimer ces contenus.<br/><br/>
+      droit de supprimer ces contenus.<br/><br/>
       Il est notamment rappelé que :
       <ul>
         <li>toute personne procédant à une fausse déclaration pour elle-même ou pour autrui s’expose, notamment, aux sanctions prévues à
-          l’article
-          441-1 du code pénal, prévoyant des peines pouvant aller jusqu’à trois ans d’emprisonnement et 45 000 euros d’amende ;
+          l’article 441-1 du code pénal, prévoyant des peines pouvant aller jusqu’à trois ans d’emprisonnement et 45 000 euros d’amende ;
         </li>
         <li>tout propos injurieux ou diffamatoire est susceptible d’être sanctionné au titre du code pénal et de la loi du 29 juillet 1881
-          sur
-          la
-          liberté de la presse.
+          sur la liberté de la presse.
         </li>
       </ul>
       <br/>

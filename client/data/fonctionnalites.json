@@ -1,18 +1,18 @@
 {
   "data": [
     {
-      "titre": "Fonctionnalité",
-      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "titre": "Consultations",
+      "description": "Participez aux consultations proposées par les Ministères en quelques clics, obtenez les résultats en temps réel puis suivez leur mise en oeuvre politique au fil des mois.",
       "img": "/card_bg.svg"
     },
     {
-      "titre": "Fonctionnalité",
-      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "titre": "Questions citoyennes",
+      "description": "Posez toutes vos questions au Gouvernement sur des sujets d’actualité ou sur les politiques mises en oeuvre.",
       "img": "/card_bg.svg"
     },
     {
-      "titre": "Fonctionnalité",
-      "description": "Description texte body small regular consectetur adipisicing  elit, sed do eiusmod tempor incididunt ut labore et dolore…",
+      "titre": "Réponses du Gouvernement",
+      "description": "Soutenez les questions posées par d’autres citoyens : le Gouvernement répond chaque semaine à la question la plus populaire !",
       "img": "/card_bg.svg"
     }
   ]

@@ -66,8 +66,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
           ;
         </li>
         <li>Définit les principes qui guident la publication, l'édition ou la suppression d'un contenu, conformément aux obligations légales
-          et à
-          la philosophie de l’application.
+          et à la philosophie de l’application.
         </li>
       </ul>
     </p>
@@ -89,8 +88,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         </li>
         <li>Les spams et les contenus de nature commerciale ou faisant la promotion d'un service ou d'une organisation ;</li>
         <li>Les questions posées en des termes identiques ou similaires, notamment celles qui sont assimilables à du spam ou dont la
-          répétition
-          vient entacher la bonne navigation du public ;
+          répétition vient entacher la bonne navigation du public ;
         </li>
         <li>Les contenus harcelants ;</li>
         <li>Les contributions qui ne sont pas rédigées sous la forme de questions.</li>
@@ -147,9 +145,8 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
       les « Consultations ».<br/><br/>
       Compte-tenu des informations collectées dans l’application, l’Editeur s’engage à mettre en place des mesures permettant de ne pas
       identifier les Utilisateurs de l’application. Il distribue à chaque Utilisateur un UserID. En outre, il s’engage à restituer
-      anonymement
-      les restitutions des différentes Consultations. Enfin, le prénom, qui constitue la donnée personnelle permettant d’identifier les
-      individus, est supprimé au bout de 15 jours de l’application.<br/><br/>
+      anonymement les restitutions des différentes Consultations. Enfin, le prénom, qui constitue la donnée personnelle permettant
+      d’identifier les individus, est supprimé au bout de 15 jours de l’application.<br/><br/>
       Afin de personnaliser les contenus, nous demandons aux Utilisateurs de signer leur Question au Gouvernement d’un « prénom ».
       L’Utilisateur peut néanmoins choisir d’indiquer un autre prénom que le sien s’il le souhaite.
     </p>
