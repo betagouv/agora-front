@@ -16,7 +16,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Mentions lég
 <template>
   <DsfrBreadcrumb :links="links"/>
   <div class="fr-mt-8w">
-    <h1>Mentions légales</h1>
+    <h1>Mentions légales de l'application</h1>
     <h2>Éditeur</h2>
     <p>
       Agora est édité par :<br/>
@@ -29,7 +29,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Mentions lég
     <p>
       Le directeur de la publication est Thierry Lambert, délégué interministériel de la transformation publique.
     </p>
-    <h2>Hébergement de l'applicatoin</h2>
+    <h2>Hébergement de l'application</h2>
     <p>
       Cette application est hébergée en propre par :<br/>
       Scalingo<br/>
@@ -53,7 +53,8 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Mentions lég
     <h2>Signaler un dysfonctionnement</h2>
     <p>
       Si vous rencontrez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité de l’application, merci de
-      nous en faire part à l’e-mail où nous tâcherons de vous répondre dans les plus brefs délais : agora@beta.gouv.fr<br/>
+      nous en faire part à l’e-mail où nous tâcherons de vous répondre dans les plus brefs délais : <a href="mailto:agora@beta.gouv.fr"
+                                                                                                       target="_blank" rel="external">agora@beta.gouv.fr</a>.<br/><br/>
       Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au
       Défenseur des droits.<br/><br/>
       Pour le joindre, vous pouvez :

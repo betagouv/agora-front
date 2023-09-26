@@ -97,7 +97,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
             <td>Pendant la durée de l’inscription de l’Utilisateur à l’application ; soit au plus 24 mois après la dernière utilisation de
               l’application par l’Utilisateur.
             </td>
-            <td>L’équipe produit d’Agora et les sous-traitants chargés de l’hébergement des données.</td>
+            <td>L’équipe produit d’Agora et les sous-traitants chargés de l’hébergement et de la sécurité des données.</td>
             <td>Données recueillies à titre facultatif.<br/><br/>
               L’analyse des résultats des consultations et des questions au Gouvernement se fait à des fins statistiques et de façon
               anonyme.
@@ -115,7 +115,9 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
             <td>Pendant la durée de l’inscription de l’Utilisateur à l’application ; soit au plus tard 24 mois après la dernière utilisation
               de l’application par l’Utilisateur, puis effacement.
             </td>
-            <td>L’équipe produit d’Agora, les sous-traitants chargés de l’analyse des contributions et de l’hébergement des données.</td>
+            <td>L’équipe produit d’Agora, les sous-traitants chargés de l’analyse des contributions et de l’hébergement et de la sécurité
+              des données.
+            </td>
             <td>Dans les champs libres d’expression pour les réponses aux consultations et pour poser des questions, il convient de ne pas
               intégrer des données à caractère personnel sous peine de les voir supprimées par le dispositif de modération.
             </td>

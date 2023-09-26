@@ -27,7 +27,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Relayant de fausses informations ;</li>
         <li>Attaquant ad hominem un individu, qu’il soit ou non membre du Gouvernement, ou portant atteinte à sa vie privée ;</li>
         <li>Les spams et les contenus de nature commerciale ou faisant la promotion d'un service ou d'une organisation ;</li>
-        <li>N’ayant pas une formulation interrogative (hors « détails supplémentaires »)</li>
+        <li>N’ayant pas une formulation interrogative (hors « détails supplémentaires ») ;</li>
         <li>Ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
       </ul>
       <br/>
@@ -35,9 +35,9 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
       <ul>
         <li>Respecter la charte de participation ;</li>
         <li>Utiliser un langage correct, concis et compréhensible ;</li>
-        <li>Utiliser un prénom dans la case “Votre Prénom”,</li>
+        <li>Utiliser un prénom dans la case “Votre Prénom” ;</li>
         <li>Ne mentionner aucune donnée à caractère personnel ou élément qui permettrait de vous identifier ou d'identifier une autre
-          personne.
+          personne ;
         </li>
         <li>Ne pas communiquer de données sensibles le concernant ou concernant des tiers, notamment les données qui révèlent l'origine
           raciale ou ethnique supposée, les opinions politiques, les convictions religieuses ou philosophiques ou l'appartenance syndicale,
@@ -91,7 +91,8 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
           répétition vient entacher la bonne navigation du public ;
         </li>
         <li>Les contenus harcelants ;</li>
-        <li>Les contributions qui ne sont pas rédigées sous la forme de questions.</li>
+        <li>Les contributions qui ne sont pas rédigées sous la forme de questions ;</li>
+        <li>Les contenus ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
       </ul>
       <br/>
       Si la question posée est refusée par l’équipe de modération, nous notifions l'Utilisateur de la suppression de la question sur
