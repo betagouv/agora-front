@@ -10,8 +10,7 @@ types {
 }
 try_files $uri $uri/ /index.html =404;
 
-location ^~ /_nuxt/ {
-    add_header Cache-Control "public, max-age=31536000, s-maxage=31536000, immutable";
+location ~ ^/_nuxt/|\.svg$ {
     try_files $uri =404;
 }
 
