@@ -76,12 +76,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  robots: {
-    rules: {
-      UserAgent: '*',
-      Disallow: process.env.APP_ENV === 'prod' ? '' : '/',
-    },
-  },
   sitemap: {
     siteUrl: `https://${process.env.DOMAIN_NAME}`,
   },
