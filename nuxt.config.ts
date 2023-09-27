@@ -11,13 +11,13 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Avec Agora, bla bla bla.',
+          content: 'Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection : c’est pourquoi Agora propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.',
         },
         { name: 'format-detection', content: 'telephone=no' },
         { property: 'og:title', content: 'Agora' },
         {
           property: 'og:description',
-          content: 'Avec Agora, bla bla bla.',
+          content: 'Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection : c’est pourquoi Agora propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.',
         },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: `https://${process.env.DOMAIN_NAME}` },
