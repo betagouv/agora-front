@@ -14,7 +14,7 @@ export default defineNuxtConfig({
           content: 'Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection : c’est pourquoi Agora propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.',
         },
         { name: 'format-detection', content: 'telephone=no' },
-        { property: 'og:title', content: 'Agora' },
+        { property: 'og:title', content: 'Application Agora (Gouvernement)' },
         {
           property: 'og:description',
           content: 'Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection : c’est pourquoi Agora propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.',
