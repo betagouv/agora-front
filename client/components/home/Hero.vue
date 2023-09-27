@@ -37,13 +37,14 @@
                 name="agora-google"
                 class="fr-mr-1w"
               />
-              Télécharger pour GooglePlay
+              Télécharger sur GooglePlay
             </a>
           </div>
         </div>
       </div>
     </div>
-    <div class="fr-col-12 fr-col-md-6">
+    <div class="fr-col-offset-md-1"></div>
+    <div class="fr-col-12 fr-col-md-5 hero-image-wrapper">
       <img
         src="/hero.png"
         style="max-width: 100%"
@@ -63,7 +64,7 @@
     content: "";
     position: absolute;
     width: 100vw;
-    height: calc(100% - 7px);
+    height: calc(100%);
     top: 0;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -83,6 +84,11 @@
     &:after {
       display: none;
     }
+  }
+  
+  &-image-wrapper {
+    display: flex;
+    align-items: end;
   }
 }
 

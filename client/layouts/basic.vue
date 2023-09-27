@@ -6,7 +6,11 @@ const a11yCompliance = 'Non conforme'
 const operatorImgSrc: string = '/logo_agora.svg'
 const operatorImgAlt: string = 'Logo du produit Agora'
 const operatorImgStyle: any = {
-  'max-height': '80px'
+  'max-height': '60px'
+}
+const operatorImgStyleFooter: any = {
+  'max-height': '120px',
+  'margin-left': '2rem'
 }
 
 const mandatoryLinks: any[] = [{
@@ -62,6 +66,6 @@ onMounted(() => {
               :mandatory-links="mandatoryLinks"
               :operatorImgSrc="operatorImgSrc"
               :operatorImgAlt="operatorImgAlt"
-              :operatorImgStyle="operatorImgStyle"
+              :operatorImgStyle="operatorImgStyleFooter"
   />
 </template>

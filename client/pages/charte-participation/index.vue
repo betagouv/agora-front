@@ -27,6 +27,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Relayant de fausses informations ;</li>
         <li>Attaquant ad hominem un individu, qu’il soit ou non membre du Gouvernement, ou portant atteinte à sa vie privée ;</li>
         <li>Les spams et les contenus de nature commerciale ou faisant la promotion d'un service ou d'une organisation ;</li>
+        <li>Contenant un lien vers un site internet ;</li>
         <li>N’ayant pas une formulation interrogative (hors « détails supplémentaires ») ;</li>
         <li>Ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
       </ul>
@@ -87,6 +88,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Les propos attaquant ad hominem un individu, qu’il soit ou non membre du Gouvernement, ou portant atteinte à sa vie privée ;
         </li>
         <li>Les spams et les contenus de nature commerciale ou faisant la promotion d'un service ou d'une organisation ;</li>
+        <li>Les propos contenants un lien vers un site internet ;</li>
         <li>Les questions posées en des termes identiques ou similaires, notamment celles qui sont assimilables à du spam ou dont la
           répétition vient entacher la bonne navigation du public ;
         </li>

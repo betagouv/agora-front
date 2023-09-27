@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="fr-col-12 fr-col-md-4">
+  <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
     <div class="agora-carte fr-p-2w">
       <img
         v-if="data.img"
@@ -28,7 +28,7 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .agora-carte {
   width: 100%;
-  border: 1px var(--grey-950-100) solid;
+  //border: 1px var(--grey-950-100) solid;
   box-sizing: border-box;
 
   &__img {
@@ -36,6 +36,7 @@ const props = defineProps<{
     width: calc(100% + 2rem);
     left: -1rem;
     top: -1rem;
+    border: 1px var(--grey-950-100) solid;
   }
 
   &__title {
