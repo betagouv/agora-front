@@ -1,3 +1,2 @@
 .scalingo
 /node_modules
-.output/public/robots.txt
