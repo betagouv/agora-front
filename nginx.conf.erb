@@ -18,7 +18,10 @@ location ~ ^/.well-known/apple-app-site-association|/.well-known/assetlinks.json
 
 location / {
   if ($host != '<%= URI.parse(ENV['DOMAIN_NAME']).host %>') {
-     <%= ENV['NGINX_ACCESS_RULES'] %>
+     location ~ .* {
+           <%= ENV['NGINX_ACCESS_RULES'] %>
+           error_page 403 = @redirect_to_agora;
+        }
   }
 
   error_page 404 =200 /;
