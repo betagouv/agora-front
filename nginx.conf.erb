@@ -1,3 +1,5 @@
+<% require 'uri' %>
+
 root /app/.output/public;
 
 autoindex off;
@@ -10,19 +12,21 @@ types {
 }
 try_files $uri $uri/ /index.html =404;
 
-location ~ ^/_nuxt/|\.svg$ {
-    try_files $uri =404;
-}
-
-location /politique-confidentialite {
-
+location ~ ^/.well-known/apple-app-site-association|/.well-known/assetlinks.json$ {
+    try_files $uri $uri/ =404;
 }
 
 location / {
-  
-  <% if ENV['NGINX_PASSWORD'] %>
-  auth_basic           "Protected Site User: <%= ENV['NGINX_USER'] %>";
-  auth_basic_user_file "/app/config/htpasswd";
-  <% end %>
+  if ($host != '<%= URI.parse(ENV['DOMAIN_NAME']).host %>') {
+     <%= ENV['NGINX_ACCESS_RULES'] %>
+  }
+
   error_page 404 =200 /;
+  try_files $uri $uri/ /index.html =404;
+}
+
+error_page 403 = @redirect_to_agora;
+
+location @redirect_to_agora {
+    rewrite ^ <%= ENV['DOMAIN_NAME'] %>$request_uri? permanent;
 }
