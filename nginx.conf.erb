@@ -17,19 +17,11 @@ location ~ ^/.well-known/apple-app-site-association|/.well-known/assetlinks.json
 }
 
 location / {
-  if ($host != '<%= URI.parse(ENV['DOMAIN_NAME']).host %>') {
-     location ~ .* {
-           <%= ENV['NGINX_ACCESS_RULES'] %>
-           error_page 403 = @redirect_to_agora;
-        }
-  }
+    # Redirect if the host doesn't match the specified domain
+    if ($host != '<%= URI.parse(ENV['DOMAIN_NAME']).host %>') {
+        return 301 <%= ENV['DOMAIN_NAME'] %>$request_uri;
+    }
 
-  error_page 404 =200 /;
-  try_files $uri $uri/ /index.html =404;
-}
-
-error_page 403 = @redirect_to_agora;
-
-location @redirect_to_agora {
-    rewrite ^ <%= ENV['DOMAIN_NAME'] %>$request_uri? permanent;
+    error_page 404 =200 /;
+    try_files $uri $uri/ /index.html =404;
 }
