@@ -24,4 +24,5 @@ location / {
   auth_basic           "Protected Site User: <%= ENV['NGINX_USER'] %>";
   auth_basic_user_file "/app/config/htpasswd";
   <% end %>
+  error_page 404 =200 /;
 }
