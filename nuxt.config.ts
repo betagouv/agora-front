@@ -79,5 +79,11 @@ export default defineNuxtConfig({
   },
   sitemap: {
     siteUrl: `https://${process.env.DOMAIN_NAME}`,
-  }
+  },
+  image: {
+    provider: 'ipx',
+    ipx: {
+      maxAge: 60 * 60 * 24 * 365
+    }
+  },
 })
