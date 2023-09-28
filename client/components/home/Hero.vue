@@ -45,12 +45,13 @@
     </div>
     <div class="fr-col-offset-md-1"></div>
     <div class="fr-col-12 fr-col-md-5 hero-image-wrapper">
-      <img
+      <NuxtImg
         src="/hero.png"
+        format="webp"
         style="max-width: 100%"
         alt="Image d'illustration de l'application Agora"
         title="Image d'illustration de l'application Agora"
-      >
+      />
     </div>
   </div>
 </template>
@@ -85,10 +86,10 @@
       display: none;
     }
   }
-  
+
   &-image-wrapper {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
   }
 }
 

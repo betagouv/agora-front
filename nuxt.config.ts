@@ -51,6 +51,7 @@ export default defineNuxtConfig({
   modules: [
     process.env.APP_ENV !== 'local' ? '@nuxtjs/robots' : '',
     'nuxt-simple-sitemap',
+    '@nuxt/image'
   ],
   runtimeConfig: {
     public: {
@@ -78,5 +79,5 @@ export default defineNuxtConfig({
   },
   sitemap: {
     siteUrl: `https://${process.env.DOMAIN_NAME}`,
-  },
+  }
 })

@@ -7,13 +7,14 @@ const props = defineProps<{
 <template>
   <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
     <div class="agora-carte fr-p-2w">
-      <img
+      <NuxtImg
         v-if="data.img"
         :src="data.img"
+        format="webp"
         class="agora-carte__img"
         alt="Image d'illustration de l'application Agora"
         title="Image d'illustration de l'application Agora"
-      >
+      />
       <h6 class="agora-carte__titre fr-my-2w">
         {{ data.titre }}
       </h6>
