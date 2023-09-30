@@ -168,12 +168,11 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
           les
           garanties de sécurité et de conformité aux normes en vigueur par l’intermédiaire de ses sous-traitants&nbsp;:
           <ul>
-            <li>Scalingo, et son partenaire IaaS Outscale, fournissant une infrastructure certifiée SecNumCloud, plus haut niveau de
-              sécurité conseillé par l'ANSSI, pour l’infogérance et l’hébergement des données&nbsp;;
+            <li>Scalingo pour l’infogérance et l’hébergement des données ; 
               <a href="https://scalingo.com/fr/data-processing-agreement"
                  target="_blank"
-                 title="https://scalingo.com/fr/data-processing-agreement - nouvelle fenêtre"
-                 rel="external">https://scalingo.com/fr/data-processing-agreement</a>&nbsp;;
+                 rel="external">https://scalingo.com/fr/data-processing-agreement</a> ;
+               Scalingo s'appuie sur Outscale qui lui fournit une infrastructure IaaS certifiée SecNumCloud, plus haut niveau de sécurité conseillé par l'ANSSI ;
             </li>
             <li>Baleen, fournissant une infrastructure qui garantit la résilience, la sécurité et la performance de l’application en
               protégeant vos données contre toute cyberattaque&nbsp;: <a href="https://baleen.cloud/confidentialite"
