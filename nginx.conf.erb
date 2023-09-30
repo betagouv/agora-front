@@ -18,8 +18,8 @@ location ~ ^/.well-known/apple-app-site-association|/.well-known/assetlinks.json
 
 location / {
     # Redirect if the host doesn't match the specified domain
-    if ($host != '<%= URI.parse(ENV['DOMAIN_NAME']).host %>') {
-        return 301 <%= ENV['DOMAIN_NAME'] %>$request_uri;
+    if ($host != '<%= ENV['DOMAIN_NAME'] %>') {
+        return 301 https://<%= ENV['DOMAIN_NAME'] %>$request_uri;
     }
 
     error_page 404 =200 /;
