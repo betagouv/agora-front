@@ -70,7 +70,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Politique de 
               </ul>
             </td>
             <td>Pouvoir répondre à la question au Gouvernement posée par l’Utilisateur en l’appelant par son prénom.</td>
-            <td>15 jours puis effacement.</td>
+            <td>8 jours puis effacement.</td>
             <td>Tous les Utilisateurs de l’application car cette donnée est publiée avec la Question, l’équipe produit d’Agora qui ont
               besoin
               des données dans leurs missions, notamment les modérateurs, les équipes techniques dont les sous-traitants et les personnes
