@@ -30,6 +30,12 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Contenant un lien vers un site internet ;</li>
         <li>N’ayant pas une formulation interrogative (hors « détails supplémentaires ») ;</li>
         <li>Ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
+        <li>
+          <i>Ajout, le 14 novembre 2023</i>, suite aux nombreux signalements d’utilisateurs : Par souci d’équité entre les participants, un sujet
+          ayant déjà reçu une réponse du Gouvernement n'est pas éligible dans le mois qui suit ; les questions posées sur ce sujet ne seront
+          donc pas acceptées pendant ce laps de temps. Cette nouvelle règle doit permettre d’assurer la variété et la diversité des sujets
+          traités sur Agora.
+        </li>
       </ul>
       <br/>
       Lorsque vous posez une question au Gouvernement, il vous est demandé de :
@@ -95,6 +101,12 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Les contenus harcelants ;</li>
         <li>Les contributions qui ne sont pas rédigées sous la forme de questions ;</li>
         <li>Les contenus ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
+        <li>
+          <i>Ajout, le 14 novembre 2023</i>, suite aux nombreux signalements d’utilisateurs : Par souci d’équité entre les participants, un sujet
+          ayant déjà reçu une réponse du Gouvernement n'est pas éligible dans le mois qui suit ; les questions posées sur ce sujet ne seront
+          donc pas acceptées pendant ce laps de temps. Cette nouvelle règle doit permettre d’assurer la variété et la diversité des sujets
+          traités sur Agora.
+        </li>
       </ul>
       <br/>
       Si la question posée est refusée par l’équipe de modération, nous notifions l'Utilisateur de la suppression de la question sur
