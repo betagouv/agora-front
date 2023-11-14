@@ -32,6 +32,11 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
       </ul>
       <br/>
+      <i>Ajout, le 14 novembre 2023</i>, suite aux nombreux signalements d’utilisateurs : Par souci d’équité entre les participants, un sujet
+      ayant déjà reçu une réponse du Gouvernement n'est pas éligible dans le mois qui suit ; les questions posées sur ce sujet ne seront
+      donc pas acceptées pendant ce laps de temps. Cette nouvelle règle doit permettre d’assurer la variété et la diversité des sujets
+      traités sur Agora.
+      <br/><br/>
       Lorsque vous posez une question au Gouvernement, il vous est demandé de :
       <ul>
         <li>Respecter la charte de participation ;</li>
@@ -97,6 +102,11 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Charte de par
         <li>Les contenus ne portant pas sur l’action du Gouvernement ou relevant manifestement du hors-sujet.</li>
       </ul>
       <br/>
+      <i>Ajout, le 14 novembre 2023</i>, suite aux nombreux signalements d’utilisateurs : Par souci d’équité entre les participants, un sujet
+      ayant déjà reçu une réponse du Gouvernement n'est pas éligible dans le mois qui suit ; les questions posées sur ce sujet ne seront
+      donc pas acceptées pendant ce laps de temps. Cette nouvelle règle doit permettre d’assurer la variété et la diversité des sujets
+      traités sur Agora.
+      <br/><br/>
       Si la question posée est refusée par l’équipe de modération, nous notifions l'Utilisateur de la suppression de la question sur
       l’application.<br/><br/>
       Si vous n’êtes pas d’accord avec cette suppression, vous pouvez nous écrire à agora@ beta.gouv.fr.
