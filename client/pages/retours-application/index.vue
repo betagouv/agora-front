@@ -6,7 +6,7 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Agora - Retours sur l\'application',
+  title: 'Retours sur l\'application - Agora',
 })
 
 const domainName = useRuntimeConfig().public.domainName
@@ -17,6 +17,14 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Retours sur l
   <DsfrBreadcrumb :links="links"/>
   <div class="fr-mt-8w">
     <h1>Retours sur l'application</h1>
+  </div>
+  <div>
+    <p>
+      Vous pouvez nous envoyer vos remarques, idées et remontées d'anomalie par email à l'adresse suivante&nbsp;: <a href="mailto:contact@agora.gouv.fr"
+                                                                                                                title="contact@agora.gouv.fr - nouvelle fenêtre"
+                                                                                                                target="_blank"
+                                                                                                                rel="external">contact@agora.gouv.fr</a>
+    </p>
   </div>
   <div class="fr-grid-row fr-grid-row--center iframe-wrapper">
     <iframe iItemId='frameSphinx'

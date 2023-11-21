@@ -8,7 +8,7 @@
       <div>
         <h1>Agora</h1>
         <p>
-          Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection : c’est pourquoi Agora
+          Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection&nbsp;: c’est pourquoi Agora
           propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.
         </p>
         <div class="fr-grid-row fr-grid-row--gutters">
@@ -18,6 +18,7 @@
               href="https://apps.apple.com/app/6449599025"
               target="_blank"
               rel="noopener"
+              title="Télécharger sur l’AppStore - nouvelle fenêtre"
             >
               <VIcon
                 name="agora-apple"
@@ -32,6 +33,7 @@
               href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
               target="_blank"
               rel="noopener"
+              title="Télécharger sur GooglePlay - nouvelle fenêtre"
             >
               <VIcon
                 name="agora-google"
@@ -48,8 +50,6 @@
       <img
         src="/hero.png"
         style="max-width: 100%"
-        alt="Image d'illustration de l'application Agora"
-        title="Image d'illustration de l'application Agora"
       >
     </div>
   </div>

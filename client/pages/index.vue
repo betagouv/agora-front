@@ -4,12 +4,12 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Agora - Accueil',
+  title: 'Accueil - Agora',
 })
 </script>
 
 <template>
   <HomeHero class="fr-pt-4w" />
-  <HomeFonctionnalites class="fr-mt-8w" />
+  <HomeFonctionnalites />
 <!--  <HomePresentation class="fr-mt-4w" />-->
 </template>

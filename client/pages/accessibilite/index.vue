@@ -6,15 +6,15 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Agora - Accessibilité',
+  title: 'Accessibilité - Agora',
 })
 
 const domainName = useRuntimeConfig().public.domainName
-const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibilité' }])
+const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilité'}])
 </script>
 
 <template>
-  <DsfrBreadcrumb :links="links" />
+  <DsfrBreadcrumb&nbsp;:links="links"/>
   <div class="fr-mt-8w">
     <h1>Déclaration d’accessibilité</h1>
     <p>Établie le <span>20 septembre 2023</span>.</p>
@@ -27,8 +27,8 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
     <p>
       <strong>Agora</strong> est
       <strong><span data-printfilter="lowercase">non conforme</span></strong> avec le <abbr
-        title="Référentiel général d’amélioration de l’accessibilité"
-      >RGAA</abbr>. <span>Le site n’a encore pas été audité.</span>
+      title="Référentiel général d’amélioration de l’accessibilité"
+    >RGAA</abbr>. <span>Le site n’a encore pas été audité.</span>
     </p>
     <h2>Contenus non accessibles</h2>
     <h2>Amélioration et contact</h2>
@@ -38,8 +38,8 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
       contenu sous une autre forme.
     </p>
     <ul>
-      <li>E-mail : agora@beta.gouv.fr</li>
-      <li>Adresse : 20 avenue de Ségur, 75007 Paris</li>
+      <li>E-mail&nbsp;: agora@beta.gouv.fr</li>
+      <li>Adresse&nbsp;: 20 avenue de Ségur, 75007 Paris</li>
     </ul>
     Nous essayons de répondre dans les 30 jours.
     <h2>Voie de recours</h2>
@@ -51,18 +51,19 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
     <ul>
       <li>
         Écrire un message au <a
-          href="https://formulaire.defenseurdesdroits.fr/"
-          target="_blank"
-          rel="external"
-        >Défenseur des droits</a>
+        href="https://formulaire.defenseurdesdroits.fr/"
+        target="_blank"
+        rel="external"
+        title="Défenseur des droits - nouvelle fenêtre"
+      >Défenseur des droits</a>
       </li>
       <li>
         Contacter <a
-          href="https://www.defenseurdesdroits.fr/saisir/delegues"
-          target="_blank"
-          rel="external"
-        >le délégué du Défenseur des
-          droits dans votre région</a>
+        href="https://www.defenseurdesdroits.fr/saisir/delegues"
+        target="_blank"
+        rel="external"
+        title="le délégué du Défenseur des droits dans votre région - nouvelle fenêtre"
+      >le délégué du Défenseur des droits dans votre région</a>
       </li>
       <li>
         Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre)&nbsp;:<br>
@@ -73,11 +74,11 @@ const links: Ref<any[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibil
     <hr>
     <p>
       Cette déclaration d’accessibilité a été créé le <span>20 septembre 2023</span> grâce au <a
-        href="https://betagouv.github.io/a11y-generateur-declaration/"
-        target="_blank"
-        rel="external"
-      >Générateur de Déclaration
-        d’Accessibilité de BetaGouv</a>.
+      href="https://betagouv.github.io/a11y-generateur-declaration/"
+      target="_blank"
+      rel="external"
+      title="Générateur de Déclaration d’Accessibilité de BetaGouv - nouvelle fenêtre"
+    >Générateur de Déclaration d’Accessibilité de BetaGouv</a>.
     </p>
   </div>
 </template>

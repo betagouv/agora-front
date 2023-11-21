@@ -4,7 +4,6 @@ import { useScheme } from '@gouvminint/vue-dsfr'
 const logoText = ['Gouvernement']
 const a11yCompliance = 'Non conforme'
 const operatorImgSrc: string = '/logo_agora.svg'
-const operatorImgAlt: string = 'Logo du produit Agora'
 const operatorImgStyle: any = {
   'max-height': '60px'
 }
@@ -54,18 +53,18 @@ onMounted(() => {
 <template>
   <DsfrHeader :logo-text="logoText"
               :operatorImgSrc="operatorImgSrc"
-              :operatorImgAlt="operatorImgAlt"
               :operatorImgStyle="operatorImgStyle"
               serviceTitle="Agora"
               serviceDescription="La première application qui fait dialoguer les citoyens et le Gouvernement"
   />
-  <div class="fr-container fr-mb-8w">
-    <slot/>
-  </div>
+  <main>
+    <div class="fr-container fr-mb-8w">
+      <slot/>
+    </div>    
+  </main>
   <DsfrFooter :logo-text="logoText"
               :mandatory-links="mandatoryLinks"
               :operatorImgSrc="operatorImgSrc"
-              :operatorImgAlt="operatorImgAlt"
               :operatorImgStyle="operatorImgStyleFooter"
   />
 </template>
