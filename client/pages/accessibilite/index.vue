@@ -14,7 +14,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
 </script>
 
 <template>
-  <DsfrBreadcrumb&nbsp;:links="links"/>
+  <DsfrBreadcrumb :links="links"/>
   <div class="fr-mt-8w">
     <h1>Déclaration d’accessibilité</h1>
 
@@ -34,7 +34,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         à l’application mobile Agora :
         <ul>
           <li>
-            <a target="_blank" href="https://apps.apple.com/us/app/agora-citoyens-gouv/id6449599025">application mobile iOS></a>
+            <a target="_blank" href="https://apps.apple.com/us/app/agora-citoyens-gouv/id6449599025">application mobile iOS</a>
           </li>
           <li>
             et <a target="_blank" href="https://play.google.com/store/apps/details?id=fr.gouv.agora">application mobile Android</a>
@@ -88,6 +88,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         Le contenu est consultable en mode portrait et en mode paysage
       </li>
     </ul>
+    <br/>
 
     <h2>Résultats des tests</h2>
 
@@ -105,6 +106,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
       Un audit RGAA est planifié au mois de décembre pour une restitution le 20
       décembre 2023.
     </p>
+    <br/>
 
     <h2>Contenus non accessibles du site vitrine</h2>
 
@@ -147,6 +149,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         </li>
       </ul>
     </div>
+    <br/>
 
     <h2>Établissement de cette déclaration d’accessibilité</h2>
 
@@ -227,6 +230,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         <strong>https://www.agora.gouv.fr/retours-application/</strong>
       </li>
     </ul>
+    <br/>
 
     <h2>Retour d’information et contact</h2>
 
