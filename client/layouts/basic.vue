@@ -2,6 +2,7 @@
 import { useScheme } from '@gouvminint/vue-dsfr'
 
 const logoText = ['Gouvernement']
+const a11yCompliance = 'Partiellement conforme'
 const operatorImgSrc: string = '/logo_agora.svg'
 const operatorImgStyle: any = {
   'max-height': '60px'
@@ -12,7 +13,7 @@ const operatorImgStyleFooter: any = {
 }
 
 const mandatoryLinks: any[] = [{
-  label: `Accessibilité`,
+  label: `Accessibilité: ${a11yCompliance}`,
   to: '/accessibilite',
 }, {
   label: 'Mentions légales',
