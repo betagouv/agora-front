@@ -32,6 +32,20 @@ const mandatoryLinks: any[] = [{
   to: '/retours-application',
 }]
 
+const ecosystemLinks: any[] = [{  
+    href: 'https://www.info.gouv.fr/',
+    label: 'info.gouv.fr',
+  }, {
+    href: 'https://www.service-public.fr/',
+    label: 'service-public.fr',
+  }, {
+    href: 'https://legifrance.gouv.fr/',
+    label: 'legifrance.gouv.fr',
+  }, {
+    href: 'https://data.gouv.fr/',
+    label: 'data.gouv.fr',
+}]
+
 const preferences = reactive({
   theme: undefined,
   scheme: undefined,
@@ -66,5 +80,6 @@ onMounted(() => {
               :mandatory-links="mandatoryLinks"
               :operatorImgSrc="operatorImgSrc"
               :operatorImgStyle="operatorImgStyleFooter"
+              :ecosystem-links="ecosystemLinks"
   />
 </template>
