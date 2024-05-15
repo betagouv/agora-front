@@ -11,6 +11,9 @@
           Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection&nbsp;: c’est pourquoi Agora
           propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.
         </p>
+        <p>
+          <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
+        </p>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12 fr-col-lg-6">
             <a
