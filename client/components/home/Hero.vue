@@ -12,7 +12,7 @@
           propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.
         </p>
         <p>
-          <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
+          <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
         </p>
         <div class="fr-grid-row fr-grid-row--gutters">
           <div class="fr-col-12 fr-col-lg-6">
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="fr-col-offset-md-1"></div>
+    <div class="fr-col-offset-md-1"/>
     <div class="fr-col-12 fr-col-md-5 hero-image-wrapper">
       <img
         src="/hero.png"
