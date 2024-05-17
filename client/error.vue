@@ -1,11 +1,14 @@
 <script setup lang="ts">
+import type { NuxtError } from '@nuxt/types';
+
 useHead({
   title: `Agora - 404`
 })
 
-const props = defineProps<{
-  error: any
+defineProps<{
+  error: NuxtError
 }>()
+
 </script>
 
 <template>

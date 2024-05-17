@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   data: { titre: string, description: string, img: string }
 }>()
 </script>
@@ -17,7 +17,7 @@ const props = defineProps<{
       </h2>
       <div
         class="agora-carte__desc"
-        v-html="data.description"
+        html="data.description"
       />
     </div>
   </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Ref } from 'vue'
+import type { Ref } from 'vue'
+import type Link from '~/client/types/link';
 
 definePageMeta({
   layout: 'basic',
@@ -9,12 +10,11 @@ useHead({
   title: 'Accessibilité - Agora',
 })
 
-const domainName = useRuntimeConfig().public.domainName
-const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilité'}])
+const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Accessibilité' }])
 </script>
 
 <template>
-  <DsfrBreadcrumb :links="links"/>
+  <DsfrBreadcrumb :links="links" />
   <div class="fr-mt-8w">
     <h1>Déclaration d’accessibilité</h1>
 
@@ -22,22 +22,25 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
       <strong>La Direction interministérielle de la transformation publique (DITP)</strong>
       s’engage à rendre ses sites internet, intranet, extranet et ses progiciels
       accessibles (et ses applications mobiles et mobilier urbain numérique)
-      conformément à l’article 47 de la loi n°2005-102 du 11 février 2005. 
-      Pour élaborer le service, elle a mobilisé des équipes de développement formées à l’accessibilité numérique et au cadre du RGAA.
-  </p>
+      conformément à l’article 47 de la loi n°2005-102 du 11 février 2005.
+      Pour élaborer le service, elle a mobilisé des équipes de développement formées à l’accessibilité numérique et au
+      cadre du RGAA.
+    </p>
 
-    <p>Cette déclaration d’accessibilité s’applique :</p>
+    <p>Cette déclaration d’accessibilité s’applique :</p>
 
     <ul>
       <li>au site vitrine Agora <strong>https://www.agora.gouv.fr/</strong></li>
       <li>
-        à l’application mobile Agora :
+        à l’application mobile Agora :
         <ul>
           <li>
-            <a target="_blank" href="https://apps.apple.com/us/app/agora-citoyens-gouv/id6449599025">application mobile iOS</a>
+            <a target="_blank" href="https://apps.apple.com/us/app/agora-citoyens-gouv/id6449599025">application mobile
+              iOS</a>
           </li>
           <li>
-            et <a target="_blank" href="https://play.google.com/store/apps/details?id=fr.gouv.agora">application mobile Android</a>
+            et <a target="_blank" href="https://play.google.com/store/apps/details?id=fr.gouv.agora">application mobile
+              Android</a>
           </li>
         </ul>
       </li>
@@ -66,7 +69,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
     </p>
     <p>
       Les 2 versions de l’application ont cependant été réalisées en tenant compte
-      de l’accessibilité dès leur conception :
+      de l’accessibilité dès leur conception :
     </p>
     <ul>
       <li>
@@ -88,7 +91,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         Le contenu est consultable en mode portrait et en mode paysage
       </li>
     </ul>
-    <br/>
+    <br>
 
     <h2>Résultats des tests</h2>
 
@@ -106,7 +109,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
       Un audit RGAA est planifié au mois de décembre pour une restitution le 20
       décembre 2023.
     </p>
-    <br/>
+    <br>
 
     <h2>Contenus non accessibles du site vitrine</h2>
 
@@ -124,7 +127,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
 
             <li>
               quelques défauts mineurs liés à l’outil de génération de formulaire
-              <a href="https://www.lesphinx-developpement.fr/">Le Sphinx</a><br />Un
+              <a href="https://www.lesphinx-developpement.fr/">Le Sphinx</a><br>Un
               e-mail de contact situé au dessus du formulaire constitue une
               alternative pour les usagers possédant un e-mail
             </li>
@@ -149,7 +152,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         </li>
       </ul>
     </div>
-    <br/>
+    <br>
 
     <h2>Établissement de cette déclaration d’accessibilité</h2>
 
@@ -184,7 +187,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
     <p>
       Les vérifications de restitution de contenus ont été réalisées sur la base de
       la combinaison fournie par la base de référence du RGAA, avec les versions
-      suivantes :
+      suivantes :
     </p>
 
     <ul>
@@ -230,7 +233,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
         <strong>https://www.agora.gouv.fr/retours-application/</strong>
       </li>
     </ul>
-    <br/>
+    <br>
 
     <h2>Retour d’information et contact</h2>
 
@@ -244,7 +247,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
     <ul>
       <li>
         Contacter
-        <strong>La Direction interministérielle de la transformation publique (DITP) : contact@agora.gouv.fr</strong>
+        <strong>La Direction interministérielle de la transformation publique (DITP) : contact@agora.gouv.fr</strong>
       </li>
     </ul>
 
@@ -258,7 +261,7 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Accessibilit�
       droits.
     </p>
 
-    <p>Plusieurs moyens sont à votre disposition :</p>
+    <p>Plusieurs moyens sont à votre disposition :</p>
 
     <ul>
       <li>Écrire un message au Défenseur des droits</li>

@@ -8,7 +8,10 @@
       "ESNext.AsyncIterable",
       "DOM"
     ],
+    "resolveJsonModule": true,
     "esModuleInterop": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
     "allowJs": true,
     "sourceMap": false,
     "strict": true,
@@ -20,7 +23,7 @@
       ],
       "@/*": [
         "./*"
-      ]
+       ]
     },
     "types": [
       "@types/node",
@@ -29,5 +32,10 @@
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "env.d.ts",
+    ".nuxt/nuxt.d.ts",
+    "**/*"
   ]
 }

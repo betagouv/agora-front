@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Ref } from 'vue'
+import type{ Ref } from 'vue'
+import type Link from '~/client/types/link';
 
 definePageMeta({
   layout: 'basic',
@@ -8,9 +9,7 @@ definePageMeta({
 useHead({
   title: 'Retours sur l\'application - Agora',
 })
-
-const domainName = useRuntimeConfig().public.domainName
-const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Retours sur l\'application'}])
+const links: Ref<Link[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Retours sur l\'application'}])
 </script>
 
 <template>
@@ -20,16 +19,16 @@ const links: Ref<any[]> = ref([{to: '/', text: 'Accueil'}, {text: 'Retours sur l
   </div>
   <div>
     <p>
-      Vous pouvez nous envoyer vos remarques, idées et remontées d'anomalie par email à l'adresse suivante&nbsp;: <a href="mailto:contact@agora.gouv.fr"
-                                                                                                                title="contact@agora.gouv.fr - nouvelle fenêtre"
-                                                                                                                target="_blank"
-                                                                                                                rel="external">contact@agora.gouv.fr</a>
+      Vous pouvez nous envoyer vos remarques, idées et remontées d'anomalie par email à l'adresse suivante&nbsp;: <a
+      href="mailto:contact@agora.gouv.fr"                                                                                                    
+      rel="external">contact@agora.gouv.fr</a>
     </p>
   </div>
   <div class="fr-grid-row fr-grid-row--center iframe-wrapper">
-    <iframe iItemId='frameSphinx'
+    <iframe
+iItemId='frameSphinx'
             src='https://cvip.sphinxonline.net/surveyserver/s/Experience_usagers/AGORA_RETEX/questionnaire.htm?ORIGINE_SAISIE=iframe'
-            frameborder='0' scrolling='auto' marginheight='0' marginwidth='0'></iframe>    
+            frameborder='0' scrolling='auto' marginheight='0' marginwidth='0'/>   
   </div>
 </template>
 
