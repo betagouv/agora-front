@@ -1,5 +1,20 @@
 <script setup lang="ts">
 
+const mobilePlatformRef : Ref<string| null> = ref(null)
+const isMobileRef = ref(false)
+
+onMounted(()=>{
+  const userAgent = navigator.userAgent
+  if (/android/i.test(userAgent)) {
+      mobilePlatformRef.value = 'android'
+      isMobileRef.value = true
+  }
+
+  if (/iPad|iPhone|iPod/.test(userAgent)) {
+      mobilePlatformRef.value = "iOS";
+      isMobileRef.value = true
+  }
+})
 </script>
 
 <template>
@@ -15,7 +30,7 @@
           <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
         </p>
         <div class="fr-grid-row fr-grid-row--gutters">
-          <div class="fr-col-12 fr-col-lg-6">
+          <div v-if="!isMobileRef || mobilePlatformRef=='iOS'" class="fr-col-12 fr-col-lg-6">
             <a
               class="fr-btn fr-btn--secondary"
               href="https://apps.apple.com/app/6449599025"
@@ -30,7 +45,7 @@
               Télécharger sur l’AppStore
             </a>
           </div>
-          <div class="fr-col-12 fr-col-lg-6">
+          <div v-if="!isMobileRef || mobilePlatformRef=='android'" class="fr-col-12 fr-col-lg-6">
             <a
               class="fr-btn fr-btn--secondary"
               href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
