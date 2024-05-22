@@ -17,7 +17,7 @@ defineProps<{
       </h2>
       <div
         class="agora-carte__desc"
-        html="data.description"
+        v-html="data.description"
       />
     </div>
   </div>
