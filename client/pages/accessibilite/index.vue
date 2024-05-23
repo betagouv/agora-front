@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type Link from '~/client/types/link';
+import type Link from '~/client/types/dsfr/link';
 
 definePageMeta({
   layout: 'basic',

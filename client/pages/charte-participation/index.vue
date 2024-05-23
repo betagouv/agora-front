@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type Link from '~/client/types/link';
+import type Link from '~/client/types/dsfr/link';
 
 definePageMeta({
   layout: 'basic',
@@ -18,7 +18,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
   <div class="fr-mt-8w">
     <h1>Charte de participation</h1>
     <h2>Charte simplifiée pour les Questions citoyennes</h2>
-    <p>
+    <div>
       De façon générale, est interdit tout comportement ou propos contraire aux dispositions législatives ou
       réglementaires.<br>
       Seront supprimées par les modérateurs de l’application les propos&nbsp;:
@@ -67,9 +67,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
     </ul>
     <br>
     Toute information transmise par l'Utilisateur relève de sa seule responsabilité.
-    </p>
+    </div>
     <h2>Charte complète</h2>
-    <p>
+    <div>
       Toute personne peut s’exprimer librement dans le cadre de l’application Agora sous réserve de respecter la
       présente Charte et les
       Dispositions légales relatives aux propos publics.<br>
@@ -99,9 +99,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
         et à la philosophie de l’application.
       </li>
     </ul>
-    </p>
+    </div>
     <h3>I – Principes de la modération des Questions citoyennes posées au Gouvernement</h3>
-    <p>
+    <div>
       Nous respectons la parole des Utilisateurs et n’altérons pas les questions, y compris critiques, dès lors qu’elles
       sont formulées avec
       cordialité et dans le respect de la charte ici présente.<br><br>
@@ -150,7 +150,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
     question sur
     l’application.<br><br>
     Si vous n’êtes pas d’accord avec cette suppression, vous pouvez nous écrire à agora@ beta.gouv.fr.
-    </p>
+    </div>
     <h3>II – Principes de la modération des Consultations</h3>
     <p>
       Les Questions au Gouvernement sont publiées sur l’application et visibles par l’ensemble des Utilisateurs.<br><br>
@@ -159,7 +159,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
       questions ouvertes ne sont pas publiés sur l’application et font l’objet d’une analyse ultérieure.
     </p>
     <h3>III – Engagements des Utilisateurs</h3>
-    <p>
+    <div>
       Les Utilisateurs s’engagent à n’exprimer, diffuser, ou partager aucun contenu offensant ou contraire à la loi ou
       au règlement. Ils
       veillent notamment à&nbsp;:
@@ -203,7 +203,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
     des informations contraires aux dispositions légales et réglementaires en vigueur. Dans le cas contraire, l’Editeur
     se réserve le
     droit de supprimer ces contenus.
-    </p>
+    </div>
     <h3>IV – Engagements de l'Éditeur d’Agora</h3>
     <h4>Respect de l’anonymat</h4>
     <p>
@@ -222,7 +222,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
       L’Utilisateur peut néanmoins choisir d’indiquer un autre prénom que le sien s’il le souhaite.
     </p>
     <h4>Protection de la réputation et de l’intégrité d’autrui</h4>
-    <p>
+    <div>
       Les propos haineux, insultants ou discriminatoires envers des individus, au-delà du rappel à la loi et des
       sanctions encourues, font
       l’objet d’une attention particulière de la part de l'Éditeur. Afin de protéger l’intégrité de tous les
@@ -234,7 +234,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Charte de
       <li>Niveau 2&nbsp;: Bannissement temporaire,</li>
       <li>Niveau 3&nbsp;: Bannissement définitif.</li>
     </ul>
-    </p>
+    </div>
     <h4>Liberté d’expression et proportionnalité de la modération</h4>
     <p>
       Les Utilisateurs de l’application concourent librement aux différentes Consultations et sans vérification de leurs

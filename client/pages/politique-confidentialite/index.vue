@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type Link from '~/client/types/link';
+import type Link from '~/client/types/dsfr/link';
 
 definePageMeta({
   layout: 'basic',
@@ -29,7 +29,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
       (DITP).
     </p>
     <h2>Quelles sont les fonctionnalités de l’application Agora ?</h2>
-    <p>
+    <div>
       L’application Agora permet aux Utilisateurs de :
     <ul>
       <li>Partager leurs idées et opinions concernant la mise en œuvre de certaines politiques publiques du Gouvernement
@@ -45,7 +45,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
     <br>
     L’application Agora permet à l’équipe produit d’Agora d’analyser les résultats des consultations proposées par le
     Gouvernement.
-    </p>
+    </div>
     <h2>Quelles sont les données traitées, pour quelles finalités et sur quel fondement juridique ?</h2>
     <div class="fr-table">
       <table class="simple-table">
@@ -193,7 +193,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
     <h2>Quels sont les sous-traitants qui interviennent, sous la responsabilité du responsable de traitement, dans le
       traitement de ces
       données ?</h2>
-    <p>
+    <div>
       Sous la direction du responsable de traitement, les sous-traitants suivants interviennent dans le traitement des
       données à caractère
       personnel :
@@ -205,7 +205,8 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
         garanties de sécurité et de conformité aux normes en vigueur par l’intermédiaire de ses sous-traitants :
         <ul>
           <li>Scalingo pour l’infogérance et l’hébergement des données ; 
-              <a href="https://scalingo.com/fr/data-processing-agreement"
+              <a 
+                 href="https://scalingo.com/fr/data-processing-agreement"
                  target="_blank"
                  rel="external">https://scalingo.com/fr/data-processing-agreement</a> ;
                Scalingo s'appuie sur Outscale qui lui fournit une infrastructure IaaS certifiée SecNumCloud, plus haut niveau de sécurité conseillé par l'ANSSI ;
@@ -224,9 +225,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
       <li>Le sous-traitant Netino assure la modération des Questions au Gouvernement avant leur publication sur
         l’application</li>
     </ul>
-    </p>
+    </div>
     <h2>Quels droits avez-vous ?</h2>
-    <p>
+    <div>
       L’Utilisateur peut supprimer ou modifier à tout moment dans son profil les données le concernant qu’il aurait
       remplies une première
       fois.<br><br>
@@ -251,9 +252,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
     Si vous ne jugez pas suffisante la prise en compte de vos droits, vous pouvez contacter la CNIL : <a
       href="https://www.cnil.fr" title="https://www.cnil.fr - nouvelle fenêtre" target="_blank"
       rel="external">https://www.cnil.fr</a>
-    </p>
+    </div>
     <h2>Qui a accès à ces données ?</h2>
-    <p>
+    <div>
       Les données ne sont ni cédées, ni transmises ni divulguées à des tiers non autorisés.<br>
       L’accès aux données est strictement encadré. Les personnes suivantes sont susceptibles d’avoir accès aux données :
     <ul>
@@ -272,9 +273,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
     Dès que les durées de conservation des données à caractère personnel indiquées ci-dessus sont échues, elles sont
     détruites. Les seules
     données et informations alors conservées le sont à des fins statistiques et anonyme.
-    </p>
+    </div>
     <h2>Quelles mesures de sécurité mettons-nous en place ?</h2>
-    <p>
+    <div>
       Nous mettons en place plusieurs mesures pour sécuriser les données :
     <ul>
       <li>Stockage des données en base de données en France ;</li>
@@ -291,7 +292,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Politique
     sécurité adapté au regard des risques d'accès accidentels, non autorisés ou illégaux, de divulgation, d'altération,
     de perte ou encore
     de destruction des données personnelles vous concernant.
-    </p>
+    </div>
     <h2>Cookies</h2>
     <p>
       Rappel de ce qu’est un cookie en général :<br>
