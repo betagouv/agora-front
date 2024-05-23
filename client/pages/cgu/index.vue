@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Ref } from 'vue'
-import type Link from '~/client/types/link';
+import type Link from '~/client/types/dsfr/link';
 
 definePageMeta({
   layout: 'basic',
@@ -26,23 +26,23 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
       L’usage de la langue française y est obligatoire.<br>
     </p>
     <h2>Article 1 – Présentation de l’application Agora</h2>
-    <p>
+    <div>
       Agora est une application gratuite qui permet aux citoyens&nbsp;:
-    <ul>
-      <li>de participer à des consultations initiées par un ministère, de suivre les résultats, engagements et mises en
-        œuvre suite aux
-        consultations&nbsp;;
-      </li>
-      <li>de poser une question sur l’action gouvernementale à laquelle peut répondre le ministre concerné ou le
-        porte-parole du
-        Gouvernement. Les Utilisateurs peuvent ainsi partager leurs contributions et idées sur des politiques publiques
-        menées par le
-        Gouvernement (consultations) mais aussi poser des questions au Gouvernement et soutenir les questions posées par
-        d’autres citoyens
-        (questions citoyennes)
-      </li>
-    </ul>
-    </p>
+      <ul>
+        <li>de participer à des consultations initiées par un ministère, de suivre les résultats, engagements et mises en
+          œuvre suite aux
+          consultations&nbsp;;
+        </li>
+        <li>de poser une question sur l’action gouvernementale à laquelle peut répondre le ministre concerné ou le
+          porte-parole du
+          Gouvernement. Les Utilisateurs peuvent ainsi partager leurs contributions et idées sur des politiques publiques
+          menées par le
+          Gouvernement (consultations) mais aussi poser des questions au Gouvernement et soutenir les questions posées par
+          d’autres citoyens
+          (questions citoyennes)
+        </li>
+      </ul>
+    </div>
     <h2>Article 2 – Définitions</h2>
     <p>
       «&nbsp;L'Utilisateur&nbsp;» est toute personne utilisant l’application Agora.<br><br>
@@ -60,7 +60,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
     </p>
     <h2>Article 3 - Fonctionnalités</h2>
     <h3>3.1 Participer à une Consultation</h3>
-    <p>
+    <div>
       L’Utilisateur peut participer aux Consultations proposées dans la page dédiée. Pour chaque Consultation, il accède
       aux différentes
       informations correspondantes (l’objet, la date limite de réponse, le nombre de questions, le temps nécessaire, le
@@ -113,9 +113,9 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
     <br>
     L’Utilisateur peut modifier ses réponses aux Consultations tant qu’il n’a pas validé ses réponses.<br><br>
     L’Utilisateur peut accéder aux résultats et à l’historique des consultations auxquelles il a participé.
-    </p>
+    </div>
     <h3>3.2 Poser une Question citoyenne</h3>
-    <p>
+    <div>
       L’Utilisateur peut poser une «&nbsp;Question citoyenne&nbsp;» une fois par semaine&nbsp;: la formulation de la
       question est libre, il est possible de
       mentionner des détails supplémentaires.<br><br>
@@ -167,7 +167,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
     d’une vidéo. Les
     Utilisateurs peuvent indiquer de façon anonyme si la réponse est pertinente en cliquant sur «&nbsp;oui&nbsp;» ou
     «&nbsp;non&nbsp;».
-    </p>
+    </div>
     <h3>3.3. Soutenir une Question citoyenne d’un autre Utilisateur</h3>
     <p>
       L’Utilisateur a accès aux différentes questions posées par d’autres Utilisateurs dès qu’elles sont validées par
@@ -179,7 +179,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
       appuyant sur le bouton “Coeur” ou le bouton “Soutenir la question”.
     </p>
     <h3>3.4. Renseignement des données socio-démographiques</h3>
-    <p>
+    <div>
       L’Utilisateur peut remplir des informations sur son profil. Cette fonctionnalité est proposée d’office après
       l’envoi de ses réponses à
       une 2ème Consultation. Ces informations facultatives permettent de réaliser une analyse anonyme des différentes
@@ -198,7 +198,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
     Ces informations peuvent être consultées, modifiées ou supprimées par l’Utilisateur au sein de l’onglet «&nbsp;Vos
     informations&nbsp;» dans la
     page «&nbsp;Mon profil&nbsp;».
-    </p>
+    </div>
     <h3>3.5. Contribution à un formulaire en ligne pour améliorer l’application</h3>
     <p>
       L’Utilisateur peut de manière facultative contribuer à l’amélioration de l’application Agora en répondant à un
@@ -229,7 +229,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
       nécessaire.
     </p>
     <h3>4.2 L’Utilisateur</h3>
-    <p>
+    <div>
       L’Utilisateur s’engage à respecter les termes de la Charte de participation.<br><br>
       A cet égard, il veille notamment à ne mentionner aucun élément qui permettrait d'identifier, directement ou
       indirectement une personne
@@ -264,7 +264,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Condition
     utilisation
     contrevenante
     aux présentes CGU ou à la Charte de participation.
-    </p>
+    </div>
     <h2>Article 5 - Mise à jour des conditions d’utilisation</h2>
     <p>
       Les termes des présentes conditions d’utilisation peuvent être amendés à tout moment, en fonction des

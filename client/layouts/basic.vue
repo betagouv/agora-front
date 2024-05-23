@@ -6,7 +6,8 @@ const logoText = ['Gouvernement']
 const a11yCompliance = 'Partiellement conforme'
 const operatorImgSrc: string = '/logo_agora.svg'
 const operatorImgStyle: Record<string, string> = {
-  'max-height': '60px'
+  'max-height': '60px',
+  'width': '60px'
 }
 const operatorImgStyleFooter: CSSProperties = {
   'max-height': '120px',

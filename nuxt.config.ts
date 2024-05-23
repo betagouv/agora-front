@@ -56,6 +56,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       domainName: process.env.DOMAIN_NAME,
+      apiBaseUrl: process.env.API_BASE_URL,
     },
   },
   hooks: {
