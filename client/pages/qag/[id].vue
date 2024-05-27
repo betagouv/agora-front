@@ -52,7 +52,7 @@ onMounted(() => {
       {{ `${qag.username} a posé une question au Gouvernement :` }}
     </p>
   
-    <div class="question fr-p-2w">
+    <div class="question fr-p-2w fr-mx-1w">
       <div>
         <p class="fr-text--lead">
           {{ qag.thematique.picto + " " + qag.thematique.label }}
@@ -64,10 +64,35 @@ onMounted(() => {
       </div>
     </div>
 
+
+
+    <div class="video-response fr-mt-2w" v-if="qag.response">
+      <p class="fr-text--lead">
+        Réponse du gouvernement
+      </p>
+      
+      <div class="fr-px-1w">
+        Par <b>{{ qag.response.author }}</b>, le {{ new Date(qag.response.responseDate).toLocaleDateString() }}
+        <p class="fr-text--xs"> {{ qag.response.authorDescription}}</p>
+
+        <DsfrVideo
+          :src="qag.response.videoUrl"
+          :transcription-content="qag.response.transcription"
+        />
+      </div>
+
+    </div>
+
+    <div class="text-response fr-mt-2w" v-if="qag.textResponse">
+      <p class="fr-text--lead">{{ qag.textResponse.responseLabel}}</p>
+      <p class="fr-px-1w" v-html="qag.textResponse.responseText"></p>
+    </div>
+    
+
     <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center fr-grid-row--gutters fr-mt-1w">
       <div class="fr-col-12 fr-col-md-8">
         <div class="text-grey fr-highlight fr-highlight--orange-terre-battue">
-          <div>
+          <div v-if="!qag.response && !qag.textResponse">
             Sa question est actuellement soutenue par
             
               <VIcon
@@ -77,6 +102,14 @@ onMounted(() => {
             <b>{{ qag.supportCount }} Agoranautes</b>.
             Pour obtenir une réponse, elle devra être en tête des soutiens sur Agora <b>lundi à 14h</b>.
             <p class="fr-mt-2w">Soutenez la question de Jordan ! Télécharger l'application :</p>
+          </div>
+          <div v-else-if="qag.response">
+            <b>{{ qag.response.feedbackQuestion }}</b>
+            <p>Répondez à cette question en télechargeant l'application :</p>
+          </div>
+          <div v-else-if="qag.textResponse">
+            <b>{{ qag.textResponse.feedbackQuestion }}</b>
+            <p>Répondez à cette question en télechargeant l'application :</p>
           </div>
           <div class="fr-mt-1w fr-grid-row fr-grid-row--middle fr-grid-row--gutters fr-px-md-6w">
             <div v-if="!isMobileRef || mobilePlatformRef == 'iOS'" class="fr-col-12 fr-col-lg-6">
