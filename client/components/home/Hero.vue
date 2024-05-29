@@ -29,7 +29,7 @@ onMounted(()=>{
         <p>
           <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
         </p>
-        <div class="fr-grid-row fr-grid-row--gutters">
+        <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
           <div v-if="!isMobileRef || mobilePlatformRef=='iOS'" class="fr-col-12 fr-col-lg-6">
             <a
               class="fr-btn fr-btn--secondary"
@@ -43,7 +43,15 @@ onMounted(()=>{
                 class="fr-mr-1w"
               />
               Télécharger sur l’AppStore
+              
             </a>
+            <div v-if="!isMobileRef" class="qr-code fr-my-2w">
+              <img
+                alt="QR code Agora AppStore"
+                src="/qrCodes/qr-code-ios.png"
+                style="max-width:150px;"
+              />
+            </div>
           </div>
           <div v-if="!isMobileRef || mobilePlatformRef=='android'" class="fr-col-12 fr-col-lg-6">
             <a
@@ -59,6 +67,13 @@ onMounted(()=>{
               />
               Télécharger sur GooglePlay
             </a>
+            <div v-if="!isMobileRef" class="qr-code fr-my-2w">
+              <img
+                alt="QR code Agora Google Play"
+                src="/qrCodes/qr-code-android.png"
+                style="max-width:150px;"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -108,7 +123,14 @@ onMounted(()=>{
     display: flex;
     align-items: flex-end;
   }
+  
+  .qr-code{
+    display: flex;
+    justify-content: center;
+  }
 }
+
+
 
 @media screen and (max-width: 767px) {
   .hero {
