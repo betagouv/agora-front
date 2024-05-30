@@ -79,17 +79,24 @@ onMounted(() => {
           :src="qag.response.videoUrl"
           :transcription-content="qag.response.transcription"
         />
+        
+        <div v-if="qag.response.additionalInfo" class="additionnal-info">
+          <span class="fr-text--lead fr-mb-4w">{{ qag.response.additionalInfo.title }}</span>
+          <p class="fr-mt-2w" v-html="qag.response.additionalInfo.description"></p>
+        </div>
+        
+        
       </div>
 
     </div>
 
     <div class="text-response fr-mt-2w" v-if="qag.textResponse">
-      <p class="fr-text--lead">{{ qag.textResponse.responseLabel}}</p>
+      <p class="fr-text--lead">{{ qag.textResponse.responseLabel }}</p>
       <p class="fr-px-1w" v-html="qag.textResponse.responseText"></p>
     </div>
     
 
-    <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center fr-grid-row--gutters fr-mt-1w">
+    <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center fr-grid-row--gutters">
       <div class="fr-col-12 fr-col-md-8">
         <div class="text-grey fr-highlight fr-highlight--orange-terre-battue">
           <div v-if="!qag.response && !qag.textResponse">
@@ -133,7 +140,7 @@ onMounted(() => {
 
       </div>
       <div class="fr-col-12 fr-col-md-4">
-        <img src="/hero.png" style="width: 95%;
+        <img src="/smartphones_complet.png" style="width: 70%;
         max-width: 100vw;">
       </div>
     </div>
