@@ -1,9 +1,8 @@
+import Thematique from "~/client/types/thematique/thematique";
+
 export default interface Qag{
   id: string,
-	thematique: {
-		label: string,
-		picto: string
-	},
+	thematique: Thematique
 	title: string,
 	description: string,
 	date: string,
