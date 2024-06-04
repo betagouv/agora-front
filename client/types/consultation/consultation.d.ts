@@ -2,7 +2,7 @@ import Thematique from "~/client/types/thematique/thematique";
 
 export default interface Consultation{
   title: string,
-  coverURL: string,
+  coverUrl: string,
   shareText: string,
   thematique: Thematique,
   questionsInfo: {
@@ -20,7 +20,7 @@ export default interface Consultation{
     picto: string,
     description: string,
     actionText: string
-  } | nullable,
+  } | null,
   infoHeader: {
     picto: string,
     description: string
@@ -61,7 +61,7 @@ interface ConsultationUpdate{
 type ConsultationUpdateType =  "update" | "results"
 type ConsultationUpdateStatus =  "done" | "current" | "incoming"
 
-type Section = SectionTitre | SectionTexteRiche | SectionImage | SectionVideo | SectionFocusNumber | SectionAccordion | SectionQuote;
+export type Section = SectionTitre | SectionTexteRiche | SectionImage | SectionVideo | SectionFocusNumber | SectionAccordion | SectionQuote;
 
 interface SectionTitre{
   type: 'title',
