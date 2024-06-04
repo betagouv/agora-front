@@ -27,7 +27,7 @@ onMounted(()=>{
           propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.
         </p>
         <p>
-          <b>🗣 En ce moment sur Agora : comment mieux rémunérer les agriculteurs ?</b>
+          <b></b>
         </p>
         <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center">
           <div v-if="!isMobileRef || mobilePlatformRef=='iOS'" class="fr-col-12 fr-col-lg-6">
