@@ -4,23 +4,25 @@ import {FetchError} from "ofetch";
 import type Consultation from "~/client/types/consultation/consultation";
 import {AsyncData} from "nuxt/app";
 import Link from "~/client/types/dsfr/link";
+import svgBook from '@gouvfr/dsfr/dist/artwork/pictograms/leisure/book.svg'
+import svgDocumentDownload from '@gouvfr/dsfr/dist/artwork/pictograms/document/document-download.svg'
 
 definePageMeta({
   layout: 'basic'
 })
 
-const mobilePlatformRef : Ref<string| null> = ref(null)
+const platformRef : Ref<string| null> = ref('desktop')
 const isMobileRef = ref(false)
 
 onMounted(()=>{
   const userAgent = navigator.userAgent
   if (/android/i.test(userAgent)) {
-    mobilePlatformRef.value = 'android'
+    platformRef.value = 'android'
     isMobileRef.value = true
   }
 
   if (/iPad|iPhone|iPod/.test(userAgent)) {
-    mobilePlatformRef.value = "iOS";
+    platformRef.value = "iOS";
     isMobileRef.value = true
   }
 })
@@ -37,7 +39,7 @@ const routeUrl = `${apiBaseUrl}/api/public/consultations/${consultationId}`
 
 const { data: consultation, error } = await useFetch(routeUrl,{
   onResponse(context) {
-    console.log('Interceptor', context.response._data.body.sections);
+    console.log('Interceptor', context.response._data);
   },
 }) as AsyncData<Consultation, FetchError>
 
@@ -45,20 +47,16 @@ if (error.value) {
   // throw createError({ statusCode: error.value!.statusCode})
 }
 
-
-
 </script>
 
 <template>
   <DsfrBreadcrumb :links="links"/>
   
-  test : {{  foo }}
-
   <div>
     <div class="fr-grid">
       <div class="fr-grid-row fr-grid-row--middle">
         <div class="fr-col-md-6 fr-col-12">
-          <img class="fr-responsive-img" :src="consultation.coverURL" alt="">
+          <img class="fr-responsive-img" :src="consultation.coverUrl" alt="">
         </div>
         <div class="fr-col-md-6 fr-col-12">
           <p class="fr-text--lead">
@@ -78,36 +76,17 @@ if (error.value) {
       </span>
     </div>
     
-<!-- SECtiONS  
-  todo : accordions , focus number, images,
- -->
+    <ConsultationSections :sections="consultation.body.sections"/>
     
-    <div class="sections fr-mt-5w" v-if="consultation.body">
-      <div class="section" v-for="section in consultation.body.sections">
-        <div v-if="section.type=='title'">
-          <h2 class="fr-text--lg section-title">{{section.title}}</h2>
-        </div>
-        
-        <div v-else-if="section.type=='richText'">
-          <p v-html="section.description"></p>
-        </div>
-        
-        <div v-else-if="section.type=='quote'" class="fr-highlight">
-          <p v-html="section.description"></p>
-        </div>
-
-        <div v-else-if="section.type=='video'">
-          <div v-if="section.authorInfo">
-            Par <b>{{ section.authorInfo.name }}</b>, le {{ new Date(section.authorInfo.date).toLocaleDateString() }}
-            <p class="fr-text--xs"> {{ section.authorInfo.message}}</p>
-          </div>
-          <DsfrVideo
-            :src="section.url"
-            :transcription-content="section.transcription"
-          />
-        </div>
-      </div>
-    </div>
+    <DsfrTile 
+      v-if="consultation.downloadAnalysisUrl" 
+      title="Télécharger la synthèse complète"
+      description="Pour aller plus loin, retrouvez l'analyse détaillée de l'ensemble des réponses à cette consultation."
+      :to="consultation.downloadAnalysisUrl"
+      :download="true"
+      :img-src="svgBook"
+      class="fr-mb-4w"
+    />
 
 <!-- FEEDBACK QUESTIONS   -->
     <div v-if="consultation.feedbackQuestion" class="feedback-question fr-grid">
@@ -118,9 +97,23 @@ if (error.value) {
           <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis </div>
         </div>
         <div class="fr-col-12 fr-col-md fr-grid-row">
-          <div v-if="!isMobileRef || mobilePlatformRef=='iOS'" class="fr-col-12 fr-col-md-3">
-            
-            <div v-if="!isMobileRef" class="qr-code fr-my-2w">
+          <div v-if="platformRef=='desktop'|| platformRef=='iOS'" class="fr-col-12 fr-col-md-4">
+            <a
+              v-if="platformRef=='iOS'"
+              class="fr-btn fr-btn--secondary"
+              href="https://apps.apple.com/app/6449599025"
+              target="_blank"
+              rel="noopener"
+              title="Télécharger sur l’AppStore - nouvelle fenêtre"
+            >
+              <VIcon
+                name="agora-apple"
+                class="fr-mr-1w"
+              />
+              Télécharger sur l’AppStore
+
+            </a>
+            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
               <img
                 alt="QR code Agora AppStore"
                 src="/qrCodes/qr-code-ios.png"
@@ -128,8 +121,19 @@ if (error.value) {
               />
             </div>
           </div>
-          <div v-if="!isMobileRef || mobilePlatformRef=='android'" class="fr-col-12 fr-col-md-3">
-            <div v-if="!isMobileRef" class="qr-code fr-my-2w">
+          <div v-if="platformRef=='desktop'|| platformRef=='android'" class="fr-col-12 fr-col-md-4">
+            <a
+              v-if="platformRef=='android'"
+              class="fr-btn fr-btn--secondary"
+              href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
+              target="_blank"
+              rel="noopener"
+              title="Télécharger sur GooglePlay - nouvelle fenêtre"
+            >
+              <VIcon name="agora-google" class="fr-mr-1w" />
+              Télécharger sur GooglePlay
+            </a>
+            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
               <img
                 alt="QR code Agora Google Play"
                 src="/qrCodes/qr-code-android.png"
@@ -137,7 +141,7 @@ if (error.value) {
               />
             </div>
           </div>
-          <div class="fr-col-offset-md-6"></div>
+          <div class="fr-col-offset-md-4"></div>
         </div>
         <div class="fr-col-offset-md-3"></div>
       </div>
