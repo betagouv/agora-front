@@ -50,7 +50,6 @@ export default defineNuxtConfig({
   modules: [
     process.env.APP_ENV !== 'local' ? '@nuxtjs/robots' : '',
     'nuxt-simple-sitemap',
-    '@nuxt/eslint'
   ],
   runtimeConfig: {
     public: {

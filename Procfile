@@ -1,1 +1,1 @@
-web: sh bin/setup-htpasswd.sh && bin/run
+web: node .output/server/index.mjs

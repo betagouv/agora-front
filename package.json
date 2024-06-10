@@ -1,49 +1,34 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "name": "Agora",
-  "scripts": {
-    "build": "nuxi generate && purgecss --config ./purgecss.config.js",
-    "start": "nuxi preview",
-    "dev": "nuxi dev",
-    "format": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
-    "preview": "nuxt preview",
-    "test": "vitest",
-    "purgecss": "purgecss --config ./purgecss.config.js"
+  "engines": {
+    "node" : "20"
   },
-  "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^6.0.0",
+  "scripts": {
+    "build": "nuxi build",
+    "start": "nuxi start",
+    "dev": "nuxi dev",
+    "preview": "nuxt preview",
+    "test": "vitest"
+  },
+  "dependencies": {
     "@gouvfr/dsfr": "^1.11.2",
     "@gouvminint/vue-dsfr": "^5.15.0",
-    "@nuxt/eslint": "^0.3.12",
-    "@nuxt/types": "^2.17.3",
-    "@nuxt/typescript-build": "^3.0.2",
-    "@nuxtjs/robots": "^3.0.0",
-    "@rushstack/eslint-patch": "^1.10.2",
+    "jsdom": "^24.0.0",
+    "nuxt": "^3.11.2",
+    "nuxt-simple-sitemap": "^4.4.1",
+    "typescript": "^5.4.5",
+    "vue-matomo": "^4.2.0"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/user-event": "^14.5.2",
     "@testing-library/vue": "^8.0.3",
-    "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.12.12",
-    "@typescript-eslint/eslint-plugin": "^7.9.0",
-    "@typescript-eslint/parser": "^7.9.0",
-    "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/tsconfig": "^0.5.1",
-    "eslint": "^9.2.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-cypress": "^3.2.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.26.0",
-    "jsdom": "^24.0.0",
-    "npm-run-all": "^4.1.5",
-    "nuxt": "^3.11.2",
-    "nuxt-simple-sitemap": "^4.4.1",
-    "sass": "^1.77.1",
-    "sass-loader": "^14.2.1",
-    "start-server-and-test": "^2.0.3",
-    "typescript": "^5.4.5",
-    "vue-matomo": "^4.2.0"
+    "@nuxt/types": "^2.17.3",
+    "@nuxt/typescript-build": "^3.0.2",
+    "@nuxtjs/robots": "^3.0.0",
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.12.12"
   }
 }
