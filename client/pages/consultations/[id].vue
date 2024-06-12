@@ -47,7 +47,6 @@ if(consultation.questionInfo){
   pourcentage.value = (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100
 }
 
-
 </script>
 
 <template>
@@ -65,7 +64,6 @@ if(consultation.questionInfo){
           </p>
           <h1>{{ consultation.title }}</h1>
 
-          <!-- Question INFO     -->
           <div v-if="consultation.questionsInfo" class="info-question fr-px-2w fr-py-1w">
             <div class="fr-mb-1w">
               <VIcon
@@ -102,15 +100,24 @@ if(consultation.questionInfo){
                 </div>
                 Prochain objectif : {{ consultation.questionsInfo.participantCountGoal }} participants!
               </div>
-              
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- INFO RESPONSE-->
-    <div v-if="consultation.responsesInfo" class="info-response fr-px-2w fr-py-1w">
+    <div v-if="consultation.consultationDates" class="consultation-dates fr-mb-4w">
+      <h2 class="fr-text--lg title">Lancement de la consultation</h2>
+      <div class="fr-mb-1w">
+        <VIcon
+          name="ri-calendar-2-line"
+        />
+        Du {{ new Date(consultation.consultationDates.startDate).toLocaleDateString()}}
+        au {{ new Date(consultation.consultationDates.endDate).toLocaleDateString()}}
+      </div>
+    </div>
+
+    <div v-if="consultation.responsesInfo" class="info-response fr-px-2w fr-py-1w fr-mb-1w">
       <span class="fr-text--lead">
         {{ consultation.responsesInfo.picto}}
       </span>
@@ -118,8 +125,7 @@ if(consultation.questionInfo){
       </span>
     </div>
     
-    <!--    INFO HEADER-->
-    <div v-if="consultation.infoHeader" class="info-header fr-px-2w fr-py-1w">
+    <div v-if="consultation.infoHeader" class="info-header fr-px-2w fr-py-1w fr-mb-1w">
       <span class="fr-text--lead">
         {{ consultation.infoHeader.picto}}
       </span>
@@ -139,7 +145,6 @@ if(consultation.questionInfo){
       class="fr-mb-4w"
     />
 
-<!-- FEEDBACK QUESTIONS   -->
     <div v-if="consultation.feedbackQuestion" class="feedback-question fr-grid">
       <div class="fr-grid-row fr-grid-row--middle">
         <div class="fr-col-12 fr-col-md">
@@ -199,10 +204,16 @@ if(consultation.questionInfo){
       
     </div>
 
-<!-- FOOTER -->
     <div v-if="consultation.footer" class="footer">
       <h2 class="fr-text--lg title">{{ consultation.footer.title }}</h2>
       <div v-html="consultation.footer.description"></div>
+    </div>
+    
+    <div v-if="consultation.goals" class="goals" >
+      <div class="fr-mt-1v" v-for="goal in consultation.goals">
+        <span class="fr-text--lead fr-mr-2w">{{ goal.picto }}</span>
+        <span v-html="goal.description"></span>
+      </div>
     </div>
 
   </div>

@@ -9,7 +9,7 @@ const expandedSectionId = ref('')
 
 </script>
 <template>
-  <div class="sections fr-mt-5w" v-if="sections">
+  <div class="sections fr-mt-1w" v-if="sections">
     <div class="section" v-for="section in sections">
       <div v-if="section.type=='title'">
         <h2 class="fr-text--lg section-title">{{section.title}}</h2>
