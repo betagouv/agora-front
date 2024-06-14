@@ -203,11 +203,6 @@ if(consultation.questionInfo){
        
       
     </div>
-
-    <div v-if="consultation.footer" class="footer">
-      <h2 class="fr-text--lg title">{{ consultation.footer.title }}</h2>
-      <div v-html="consultation.footer.description"></div>
-    </div>
     
     <div v-if="consultation.goals" class="goals" >
       <div class="fr-mt-1v" v-for="goal in consultation.goals">
@@ -215,6 +210,13 @@ if(consultation.questionInfo){
         <span v-html="goal.description"></span>
       </div>
     </div>
+
+    <div v-if="consultation.footer" class="footer">
+      <h2 class="fr-text--lg title">{{ consultation.footer.title }}</h2>
+      <div v-html="consultation.footer.description"></div>
+    </div>
+    
+    <ConsultationHistory v-if="consultation.history" :history="consultation.history"/>
 
   </div>
 </template>
