@@ -31,14 +31,6 @@ defineProps<{
       height: 2.5em;
       padding: 10px;
     }
-
-    &:not(:last-child) .step::after {
-      display: block;
-      content: "";
-      position: absolute;
-      background: var(--background-open-blue-france-hover);
-      z-index: -1;
-    }
     
     .content{
       padding: 10px;
@@ -50,14 +42,19 @@ defineProps<{
 
 @media screen and ( min-width: 64em){
   .history{
-    flex-direction: row;
+    flex-direction: row-reverse;
 
     .history-item{
       width: 80%;
       justify-content: space-around;
 
-      &:not(:last-child) .step::after {
-        top: 15%;
+      &:not(:first-child) .step::after {
+        display: block;
+        content: "";
+        position: absolute;
+        background: var(--background-open-blue-france-hover);
+        z-index: -1;
+        top: 1.5em;
         height: 3px;
         width: 100%;
       }
@@ -84,6 +81,11 @@ defineProps<{
       }
 
       &:not(:last-child) .step::after {
+        display: block;
+        content: "";
+        position: absolute;
+        background: var(--background-open-blue-france-hover);
+        z-index: -1;
         top: 50%;
         left: 1.4em;
         width: 3px;
