@@ -10,12 +10,7 @@ defineProps<{
 <template>
   <div class="history">
     <div class="history-item" v-for="update in history">
-      <div class="step"></div>
-      <VIcon
-        name="ri-calendar-2-line"
-        class="icon"
-      />
-      <div class="content">{{update.title }}</div>
+      <ConsultationHistoryUpdate :update="update"/>
     </div>
   </div>
 </template>
