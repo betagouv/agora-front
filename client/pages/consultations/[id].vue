@@ -37,7 +37,11 @@ const consultationId = route.params.id
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
 const routeUrl = `${apiBaseUrl}/api/public/consultations/${consultationId}`
 
-const { data: consultation, error } = await useFetch(routeUrl) as AsyncData<Consultation, FetchError>
+const { data: consultation, error } = await useFetch(routeUrl,{
+  onResponse(context) {
+    console.log('Interceptor', context.response._data.history);
+  },
+}) as AsyncData<Consultation, FetchError>
 
 if (error.value) {
   throw createError({ statusCode: error.value!.statusCode})
@@ -216,7 +220,7 @@ if(consultation.questionInfo){
       <div v-html="consultation.footer.description"></div>
     </div>
     
-    <ConsultationHistory v-if="consultation.history" :history="consultation.history"/>
+    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-6w"/>
 
   </div>
 </template>
