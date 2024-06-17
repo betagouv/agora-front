@@ -109,7 +109,7 @@ if(consultation.questionInfo){
         </div>
       </div>
     </div>
-
+    
     <div v-if="consultation.consultationDates" class="consultation-dates fr-mb-4w">
       <h2 class="fr-text--lg title">Lancement de la consultation</h2>
       <div class="fr-mb-1w">
@@ -156,7 +156,7 @@ if(consultation.questionInfo){
           <div v-html="consultation.feedbackQuestion.description"/>
           <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis </div>
         </div>
-        <div class="fr-col-12 fr-col-md fr-grid-row">
+        <div class="fr-col-12 fr-col-md fr-grid-row fr-grid-row--gutters">
           <div v-if="platformRef=='desktop'|| platformRef=='iOS'" class="fr-col-12 fr-col-md-4">
             <a
               v-if="platformRef=='iOS'"
@@ -176,7 +176,7 @@ if(consultation.questionInfo){
               <img
                 alt="QR code Agora AppStore"
                 src="/qrCodes/qr-code-ios.png"
-                style="max-width:100px;"
+                style="max-width:125px;"
               />
             </div>
           </div>
@@ -196,7 +196,7 @@ if(consultation.questionInfo){
               <img
                 alt="QR code Agora Google Play"
                 src="/qrCodes/qr-code-android.png"
-                style="max-width:100px;"
+                style="max-width:125px;"
               />
             </div>
           </div>
@@ -220,7 +220,7 @@ if(consultation.questionInfo){
       <div v-html="consultation.footer.description"></div>
     </div>
     
-    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-6w"/>
+    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-2w"/>
 
   </div>
 </template>

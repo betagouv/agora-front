@@ -11,7 +11,7 @@ defineProps<{
     <div class="step"></div>
     <VIcon
       name="ri-check-line"
-      class="icon"
+      class="icon icon-fill"
       v-if="update.status==='done'"
     />
 
@@ -34,6 +34,9 @@ defineProps<{
     <div class="content-date">
       {{ update.date ? new Date(update.date).toLocaleDateString() : 'Prochainement'}}
     </div>
+    <!--  TODO: sous page 
+      <p class="fr-mt-1w action" v-if="update.actionText">{{ update.actionText}} </p>
+    -->
   </div>
     
   </div>
@@ -50,11 +53,25 @@ defineProps<{
   }
 }
 
-.content-date{
-  font-style: italic;
+.next-update{
+  .content{
+    background-color: #c1c1fb40 !important;
+  }
 }
 
-.next-update{
-  opacity: .50;
+.icon-fill{
+  background-color: var(--blue-france-sun-113-625) !important;
+  color: white !important;
 }
+
+.content{
+  .content-date{
+    font-style: italic;
+  }
+  .action{
+    color: var(--blue-france-sun-113-625)
+  }
+}
+
+
 </style>
