@@ -12,7 +12,6 @@ definePageMeta({
 
 const platformRef : Ref<string| null> = ref('desktop')
 const isMobileRef = ref(false)
-const pourcentage = ref(0)
 
 onMounted(()=>{
   const userAgent = navigator.userAgent
@@ -39,16 +38,12 @@ const routeUrl = `${apiBaseUrl}/api/public/consultations/${consultationId}`
 
 const { data: consultation, error } = await useFetch(routeUrl,{
   onResponse(context) {
-    console.log('Interceptor', context.response._data.history);
+    console.log('Interceptor', context.response._data);
   },
 }) as AsyncData<Consultation, FetchError>
 
 if (error.value) {
   throw createError({ statusCode: error.value!.statusCode})
-}
-
-if(consultation.questionInfo){
-  pourcentage.value = (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100
 }
 
 </script>
@@ -100,7 +95,7 @@ if(consultation.questionInfo){
               </span>
               <div class="fr-mt-1w fr-ml-3w">
                 <div class="progress-bar fr-mb-1w">
-                  <div class="progress-value" :style="{ width: pourcentage + '%' }"></div>
+                  <div class="progress-value" :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
                 </div>
                 Prochain objectif : {{ consultation.questionsInfo.participantCountGoal }} participants!
               </div>
@@ -109,6 +104,63 @@ if(consultation.questionInfo){
         </div>
       </div>
     </div>
+    <DsfrAlert 
+      type="info" 
+      :small=true 
+      v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
+    >
+      <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center">
+        <div class="fr-col-12 fr-col-md-6">
+          <div class="fr-text--lg fr-mb-1w" >Répondez dès maintenant à cette consultation sur l'application Agora </div>
+        </div>
+        <div class="fr-col-12 fr-col-md-6 fr-grid-row ">
+          <div v-if="platformRef=='desktop'|| platformRef=='iOS'" class="fr-col-12 fr-col-md-3">
+            <a
+              v-if="platformRef=='iOS'"
+              class="fr-btn fr-btn--secondary"
+              href="https://apps.apple.com/app/6449599025"
+              target="_blank"
+              rel="noopener"
+              title="Télécharger sur l’AppStore - nouvelle fenêtre"
+            >
+              <VIcon
+                name="agora-apple"
+              />
+              Télécharger sur l’AppStore
+
+            </a>
+            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
+              <img
+                alt="QR code Agora AppStore"
+                src="/qrCodes/qr-code-ios.png"
+                style="max-width:100px;"
+              />
+            </div>
+          </div>
+          <div v-if="platformRef=='desktop'|| platformRef=='android'" class="fr-col-12 fr-col-md-3">
+            <a
+              v-if="platformRef=='android'"
+              class="fr-btn fr-btn--secondary"
+              href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
+              target="_blank"
+              rel="noopener"
+              title="Télécharger sur GooglePlay - nouvelle fenêtre"
+            >
+              <VIcon name="agora-google" class="fr-mr-1w" />
+              Télécharger sur GooglePlay
+            </a>
+            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
+              <img
+                alt="QR code Agora Google Play"
+                src="/qrCodes/qr-code-android.png"
+                style="max-width:100px;"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </DsfrAlert>
     
     <div v-if="consultation.consultationDates" class="consultation-dates fr-mb-4w">
       <h2 class="fr-text--lg title">Lancement de la consultation</h2>
@@ -245,6 +297,10 @@ if(consultation.questionInfo){
 
     }
   }
+}
+
+.call-to-action{
+  background: var(--background-open-blue-france-hover);
 }
 .ov-icon{
   color: var(--text-title-blue-france)
