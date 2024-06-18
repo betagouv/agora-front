@@ -1,6 +1,6 @@
 import { AgoraApple, AgoraGoogle } from '../assets/icons'
 import {
-  DsfrAccordion,
+  DsfrAccordion, DsfrAlert,
   DsfrBreadcrumb,
   DsfrFooter,
   DsfrHeader,
@@ -30,6 +30,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('DsfrModal', DsfrModal);
   nuxtApp.vueApp.component('DsfrAccordion', DsfrAccordion);
   nuxtApp.vueApp.component('DsfrTile', DsfrTile);
+  nuxtApp.vueApp.component('DsfrAlert', DsfrAlert);
+
 
   addIcons(...icons);
   nuxtApp.vueApp.component('VIcon', OhVueIcon);
