@@ -53,12 +53,13 @@ onMounted(() => {
     </p>
   
     <div class="question fr-p-2w fr-mx-1w">
-      <div>
-        <p class="fr-text--lead">
-          {{ qag.thematique.picto + " " + qag.thematique.label }}
-        </p>
+          <p class="fr-text--lead">
+            {{ qag.thematique.picto + " " + qag.thematique.label }}
+          </p>
+          <DsfrBadge v-if="qag.status=='selectedForResponse'" type="info" label="Réponse à venir"/>
+          <DsfrBadge v-else-if="qag.status=='responseAvailable'" type="success" label="Réponse reçue"/>
+          <DsfrBadge v-else-if="qag.status=='openForSupport'" type="new" label="À soutenir"/>
         <h2 class="fr-mt-4w question-text">{{ qag.title }}</h2>
-      </div> 
       <div class="fr-mt-6w">
         <p>{{ qag.description }}</p>
       </div>
@@ -154,6 +155,11 @@ onMounted(() => {
   }
   .question{
     background-color: var(--blue-france-975-75);
+    position: relative;
+
+    .status-container {
+      text-align: end;
+    }
   }
   .question-text{
     color: var(--blue-france-sun-113-625)
