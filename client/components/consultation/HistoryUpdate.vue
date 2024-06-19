@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div :class="{'current-update': update.status ==='current', 'next-update' : update.status ==='incoming\''}">
+  <div :class="{'current-update': update.status ==='current', 'next-update' : update.status ==='incoming'}">
     <div class="step"></div>
     <VIcon
       name="ri-check-line"
@@ -24,7 +24,7 @@ defineProps<{
     <VIcon
       name="ri-calendar-2-line"
       class="icon"
-      v-else-if="update.status==='incoming\''"
+      v-else-if="update.status==='incoming'"
     />
     
   <div class="content">
