@@ -48,7 +48,7 @@ onMounted(() => {
   <div class="fr-mt-10w">
     <h1>Questions citoyennes</h1>
 
-    <p class="fr-text--lead">
+    <p class="fr-text--lead" v-if="qag.username">
       {{ `${qag.username} a posé une question au Gouvernement :` }}
     </p>
   
