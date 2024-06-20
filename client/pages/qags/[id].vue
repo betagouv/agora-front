@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type Link from '~/client/types/dsfr/link';
 import type Qag from '~/client/types/qag/qag';
-import {Ref} from "vue";
 import {FetchError} from "ofetch";
 import {AsyncData} from "nuxt/app";
 
@@ -24,22 +23,6 @@ if (error.value) {
 }
 
 const links: Link[] = [{ to: '/', text: 'Accueil' }, { text: 'Questions citoyennes' }]
-
-const mobilePlatformRef: Ref<string | null> = ref(null)
-const isMobileRef = ref(false)
-
-onMounted(() => {
-  const userAgent = navigator.userAgent
-  if (/android/i.test(userAgent)) {
-    mobilePlatformRef.value = 'android'
-    isMobileRef.value = true
-  }
-
-  if (/iPad|iPhone|iPod/.test(userAgent)) {
-    mobilePlatformRef.value = "iOS";
-    isMobileRef.value = true
-  }
-})
 
 </script>
 
@@ -95,11 +78,7 @@ onMounted(() => {
       <p class="fr-text--lead">{{ qag.textResponse.responseLabel }}</p>
       <p class="fr-px-1w" v-html="qag.textResponse.responseText"></p>
     </div>
-    
-
-    <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center fr-grid-row--gutters">
-      <div class="fr-col-12 fr-col-md-8">
-        <div class="text-grey fr-highlight fr-highlight--orange-terre-battue">
+      <BandeauTelechargement>
           <div v-if="!qag.response && !qag.textResponse">
             Sa question est actuellement soutenue par
             
@@ -113,39 +92,13 @@ onMounted(() => {
           </div>
           <div v-else-if="qag.response">
             <b>{{ qag.response.feedbackQuestion }}</b>
-            <p>Répondez à cette question en télechargeant l'application :</p>
+            <p>Donnez votre avis en téléchargeant l’application Agora :</p>
           </div>
           <div v-else-if="qag.textResponse">
             <b>{{ qag.textResponse.feedbackQuestion }}</b>
             <p>Répondez à cette question en télechargeant l'application :</p>
           </div>
-          <div class="fr-mt-1w fr-grid-row fr-grid-row--middle fr-grid-row--gutters fr-px-md-6w">
-            <div v-if="!isMobileRef || mobilePlatformRef == 'iOS'" class="fr-col-12 fr-col-lg-6">
-              <a class="fr-btn fr-btn--secondary" href="https://apps.apple.com/app/6449599025" target="_blank"
-                rel="noopener" title="Télécharger sur l’AppStore - nouvelle fenêtre">
-                <VIcon name="agora-apple" class="fr-mr-1w" />
-                Télécharger sur l’AppStore
-              </a>
-            </div>
-
-            <div v-if="!isMobileRef || mobilePlatformRef == 'android'" class="fr-col-12 fr-col-lg-6">
-              <a class="fr-btn fr-btn--secondary" href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
-                target="_blank" rel="noopener" title="Télécharger sur GooglePlay - nouvelle fenêtre">
-                <VIcon name="agora-google" class="fr-mr-1w" />
-                Télécharger sur GooglePlay
-              </a>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      <div class="fr-col-12 fr-col-md-4">
-        <img src="/smartphones_complet.png" style="width: 70%;
-        max-width: 100vw;">
-      </div>
-    </div>
-
+      </BandeauTelechargement>
   </div>
 </template>
 

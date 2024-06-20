@@ -75,6 +75,8 @@ if (error.value) {
                 name="ri-questionnaire-line"
               />
               {{ consultation.questionsInfo.questionCount }}
+            </div>
+            <div class="fr-mb-1w">
               <VIcon
                 name="ri-timer-line"
               />
@@ -87,81 +89,23 @@ if (error.value) {
               <span v-if="consultation.questionsInfo.participantCount == 0">
                 Aucun participant
               </span>
-                    <span v-else-if="consultation.questionsInfo.participantCount == 1">
+              <span v-else-if="consultation.questionsInfo.participantCount == 1">
                 1 participant
               </span>
-                    <span v-else>
+              <span v-else>
                 {{ consultation.questionsInfo.participantCount }} participants
               </span>
               <div class="fr-mt-1w fr-ml-3w">
                 <div class="progress-bar fr-mb-1w">
                   <div class="progress-value" :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
                 </div>
-                Prochain objectif : {{ consultation.questionsInfo.participantCountGoal }} participants!
+                Prochain objectif : {{ consultation.questionsInfo.participantCountGoal }} participants !
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <DsfrAlert 
-      type="info" 
-      :small=true 
-      v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
-    >
-      <div class="fr-grid-row fr-grid-row--middle fr-grid-row--center">
-        <div class="fr-col-12 fr-col-md-6">
-          <div class="fr-text--lg fr-mb-1w" >Répondez dès maintenant à cette consultation sur l'application Agora </div>
-        </div>
-        <div class="fr-col-12 fr-col-md-6 fr-grid-row ">
-          <div v-if="platformRef=='desktop'|| platformRef=='iOS'" class="fr-col-12 fr-col-md-3">
-            <a
-              v-if="platformRef=='iOS'"
-              class="fr-btn fr-btn--secondary"
-              href="https://apps.apple.com/app/6449599025"
-              target="_blank"
-              rel="noopener"
-              title="Télécharger sur l’AppStore - nouvelle fenêtre"
-            >
-              <VIcon
-                name="agora-apple"
-              />
-              Télécharger sur l’AppStore
-
-            </a>
-            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
-              <img
-                alt="QR code Agora AppStore"
-                src="/qrCodes/qr-code-ios.png"
-                style="max-width:100px;"
-              />
-            </div>
-          </div>
-          <div v-if="platformRef=='desktop'|| platformRef=='android'" class="fr-col-12 fr-col-md-3">
-            <a
-              v-if="platformRef=='android'"
-              class="fr-btn fr-btn--secondary"
-              href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
-              target="_blank"
-              rel="noopener"
-              title="Télécharger sur GooglePlay - nouvelle fenêtre"
-            >
-              <VIcon name="agora-google" class="fr-mr-1w" />
-              Télécharger sur GooglePlay
-            </a>
-            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
-              <img
-                alt="QR code Agora Google Play"
-                src="/qrCodes/qr-code-android.png"
-                style="max-width:100px;"
-              />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </DsfrAlert>
-    
     <div v-if="consultation.consultationDates" class="consultation-dates fr-mb-4w">
       <h2 class="fr-text--lg title">Lancement de la consultation</h2>
       <div class="fr-mb-1w">
@@ -200,65 +144,6 @@ if (error.value) {
       :img-src="svgBook"
       class="fr-mb-4w"
     />
-
-    <div v-if="consultation.feedbackQuestion" class="feedback-question fr-grid">
-      <div class="fr-grid-row fr-grid-row--middle">
-        <div class="fr-col-12 fr-col-md">
-          <div class="fr-text--lg fr-mb-1w feedback-question-title" >{{ consultation.feedbackQuestion.picto}} {{ consultation.feedbackQuestion.title}}</div>
-          <div v-html="consultation.feedbackQuestion.description"/>
-          <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis </div>
-        </div>
-        <div class="fr-col-12 fr-col-md fr-grid-row fr-grid-row--gutters">
-          <div v-if="platformRef=='desktop'|| platformRef=='iOS'" class="fr-col-12 fr-col-md-4">
-            <a
-              v-if="platformRef=='iOS'"
-              class="fr-btn fr-btn--secondary"
-              href="https://apps.apple.com/app/6449599025"
-              target="_blank"
-              rel="noopener"
-              title="Télécharger sur l’AppStore - nouvelle fenêtre"
-            >
-              <VIcon
-                name="agora-apple"
-                    />
-              Télécharger sur l’AppStore
-
-            </a>
-            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
-              <img
-                alt="QR code Agora AppStore"
-                src="/qrCodes/qr-code-ios.png"
-                style="max-width:125px;"
-              />
-            </div>
-          </div>
-          <div v-if="platformRef=='desktop'|| platformRef=='android'" class="fr-col-12 fr-col-md-4">
-            <a
-              v-if="platformRef=='android'"
-              class="fr-btn fr-btn--secondary"
-              href="https://play.google.com/store/apps/details?id=fr.gouv.agora"
-              target="_blank"
-              rel="noopener"
-              title="Télécharger sur GooglePlay - nouvelle fenêtre"
-            >
-              <VIcon name="agora-google" class="fr-mr-1w" />
-              Télécharger sur GooglePlay
-            </a>
-            <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
-              <img
-                alt="QR code Agora Google Play"
-                src="/qrCodes/qr-code-android.png"
-                style="max-width:125px;"
-              />
-            </div>
-          </div>
-          <div class="fr-col-offset-md-4"></div>
-        </div>
-        <div class="fr-col-offset-md-3"></div>
-      </div>
-       
-      
-    </div>
     
     <div v-if="consultation.goals" class="goals" >
       <div class="fr-mt-1v" v-for="goal in consultation.goals">
@@ -272,8 +157,18 @@ if (error.value) {
       <div v-html="consultation.footer.description"></div>
     </div>
     
-    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-2w"/>
+    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-6w"/>
 
+    <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
+      <div class="fr-text--lg fr-mb-1w feedback-question-title" >{{ consultation.feedbackQuestion.picto}} {{ consultation.feedbackQuestion.title}}</div>
+      <div v-html="consultation.feedbackQuestion.description"/>
+      <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis.</div>
+    </BandeauTelechargement>
+    
+    <BandeauTelechargement class="fr-mt-2w" v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()">
+      Pour répondre à cette consultation, rendez-vous sur l’application Agora.
+    </BandeauTelechargement>
+    
   </div>
 </template>
 
