@@ -33,7 +33,7 @@ onMounted(()=>{
             <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
               <img
                 alt="QR code Agora AppStore"
-                src="/qrCodes/qr-code-ios.png"
+                src="/qrCodes/qr-code-ios-fond-blanc.png"
               />
             </div>
           </div>
@@ -47,7 +47,7 @@ onMounted(()=>{
             <div v-if="platformRef=='desktop'" class="qr-code fr-my-2w">
               <img
                 alt="QR code Agora Google Play"
-                src="/qrCodes/qr-code-android.png"
+                src="/qrCodes/qr-code-android-fond-blanc.png"
               />
             </div>
           </div>
