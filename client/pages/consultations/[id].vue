@@ -36,7 +36,7 @@ const consultationId = route.params.id
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
 const routeUrl = `${apiBaseUrl}/api/public/consultations/${consultationId}`
 
-const { data: consultation, error } = await useFetch(routeUrlgi) as AsyncData<Consultation, FetchError>
+const { data: consultation, error } = await useFetch(routeUrl) as AsyncData<Consultation, FetchError>
 
 if (error.value) {
   throw createError({ statusCode: error.value!.statusCode})
