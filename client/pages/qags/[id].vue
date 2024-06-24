@@ -78,7 +78,7 @@ const links: Link[] = [{ to: '/', text: 'Accueil' }, { text: 'Questions citoyenn
       <p class="fr-text--lead">{{ qag.textResponse.responseLabel }}</p>
       <p class="fr-px-1w" v-html="qag.textResponse.responseText"></p>
     </div>
-      <BandeauTelechargement>
+      <BandeauTelechargement class="fr-mt-2w">
           <div v-if="!qag.response && !qag.textResponse">
             Sa question est actuellement soutenue par
             
@@ -88,7 +88,7 @@ const links: Link[] = [{ to: '/', text: 'Accueil' }, { text: 'Questions citoyenn
               /> 
             <b>{{ qag.supportCount }} Agoranautes</b>.
             Pour obtenir une réponse, elle devra être en tête des soutiens sur Agora <b>lundi à 14h</b>.
-            <p class="fr-mt-2w">Soutenez la question de Jordan ! Télécharger l'application :</p>
+            <p class="fr-mt-2w">Soutenez la question de {{ qag.username }} ! Télécharger l'application :</p>
           </div>
           <div v-else-if="qag.response">
             <b>{{ qag.response.feedbackQuestion }}</b>
