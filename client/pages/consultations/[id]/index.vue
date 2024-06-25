@@ -153,7 +153,7 @@ if (error.value) {
       <div v-html="consultation.footer.description"></div>
     </div>
     
-    <ConsultationHistory v-if="consultation.history" :history="consultation.history" class="fr-mt-6w"/>
+    <ConsultationHistory v-if="consultation.history" :history="consultation.history" :consultation-id="consultationId" :current-update-id="consultation.history.find(el => el.status === 'current')?.updateId" class="fr-mt-6w"/>
 
     <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title" >{{ consultation.feedbackQuestion.picto}} {{ consultation.feedbackQuestion.title}}</div>
