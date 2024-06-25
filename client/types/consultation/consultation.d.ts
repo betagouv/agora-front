@@ -49,7 +49,7 @@ export default interface Consultation{
   history: ConsultationUpdate[]
 }
 
-interface ConsultationUpdate{
+export interface ConsultationUpdate{
   updateId: string,
   type: ConsultationUpdateType,
   status: ConsultationUpdateStatus,

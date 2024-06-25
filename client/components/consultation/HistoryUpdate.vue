@@ -3,11 +3,13 @@ import { ConsultationUpdate } from '~/client/types/consultation/consultation';
 
 defineProps<{
   update: ConsultationUpdate
+  consultationId: string
+  currentUpdateId: string
 }>()
 </script>
 
 <template>
-  <div :class="{'current-update': update.status ==='current', 'next-update' : update.status ==='incoming'}">
+  <div :class="{'current-update': currentUpdateId == update.updateId, 'last-update': update.status=='current', 'next-update' : update.status ==='incoming'}">
     <div class="step"></div>
     <VIcon
       name="ri-check-line"
@@ -34,9 +36,9 @@ defineProps<{
     <div class="content-date">
       {{ update.date ? new Date(update.date).toLocaleDateString() : 'Prochainement'}}
     </div>
-    <!--  TODO: sous page 
-      <p class="fr-mt-1w action" v-if="update.actionText">{{ update.actionText}} </p>
-    -->
+    <NuxtLink :to="`/consultations/${consultationId}/update/${update.updateId}`"  class="fr-mt-1w action">
+      {{ update.actionText}}    
+    </NuxtLink>
   </div>
     
   </div>
@@ -44,12 +46,15 @@ defineProps<{
 
 <style>
 .current-update{
+  .content{
+    font-weight: bold;
+  }
+}
+
+.last-update{
   .icon{
     outline: 2px dashed #e1010e;
     outline-offset: 3px;
-  }
-  .content{
-    font-weight: bold;
   }
 }
 
