@@ -67,13 +67,11 @@ const { data: consultationUpdate } = await useFetch(routeUrl,{
               <VIcon
                 name="ri-group-line"
               />
-              <span v-if="consultationUpdate.questionsInfo.participantCount == 0">
-                Aucun participant
-              </span>
-              <span v-else-if="consultationUpdate.questionsInfo.participantCount == 1">
+              <span class="fr-pl-1v" v-if="consultationUpdate.questionsInfo.participantCount == 0">Aucun participant</span>
+              <span class="fr-pl-1v" v-else-if="consultationUpdate.questionsInfo.participantCount == 1">
                 1 participant
               </span>
-              <span v-else>
+              <span class="fr-pl-1v" v-else>
                 {{ consultationUpdate.questionsInfo.participantCount }} participants
               </span>
               <div class="fr-mt-1w fr-ml-3w">
@@ -143,7 +141,7 @@ const { data: consultationUpdate } = await useFetch(routeUrl,{
     <BandeauTelechargement v-if="consultationUpdate.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title" >{{ consultationUpdate.feedbackQuestion.picto}} {{ consultationUpdate.feedbackQuestion.title}}</div>
       <div v-html="consultationUpdate.feedbackQuestion.description"/>
-      <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis.</div>
+      <div class="fr-text--sm">Téléchargez l'application pour donner votre avis.</div>
     </BandeauTelechargement>
 
     <BandeauTelechargement class="fr-mt-2w" v-if="consultationUpdate.questionsInfo && new Date(consultationUpdate.questionsInfo.endDate) >= new Date()">

@@ -82,13 +82,11 @@ if (error.value) {
               <VIcon
                 name="ri-group-line"
               />
-              <span v-if="consultation.questionsInfo.participantCount == 0">
-                Aucun participant
-              </span>
-              <span v-else-if="consultation.questionsInfo.participantCount == 1">
+              <span class="fr-pl-1v" v-if="consultation.questionsInfo.participantCount == 0">Aucun participant</span>
+              <span class="fr-pl-1v" v-else-if="consultation.questionsInfo.participantCount == 1">
                 1 participant
               </span>
-              <span v-else>
+              <span class="fr-pl-1v" v-else>
                 {{ consultation.questionsInfo.participantCount }} participants
               </span>
               <div class="fr-mt-1w fr-ml-3w">
@@ -158,7 +156,7 @@ if (error.value) {
     <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title" >{{ consultation.feedbackQuestion.picto}} {{ consultation.feedbackQuestion.title}}</div>
       <div v-html="consultation.feedbackQuestion.description"/>
-      <div class="fr-text--sm">Téléchargez l'application pour donnez votre avis.</div>
+      <div class="fr-text--sm">Téléchargez l'application pour donner votre avis.</div>
     </BandeauTelechargement>
     
     <BandeauTelechargement class="fr-mt-2w" v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()">
