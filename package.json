@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "name": "Agora",
   "engines": {
-    "node" : "20"
+    "node": "20"
   },
   "scripts": {
     "build": "nuxi build",
@@ -21,14 +21,15 @@
     "vue-matomo": "^4.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/user-event": "^14.5.2",
-    "@testing-library/vue": "^8.0.3",
-    "@vue/tsconfig": "^0.5.1",
     "@nuxt/types": "^2.17.3",
     "@nuxt/typescript-build": "^3.0.2",
     "@nuxtjs/robots": "^3.0.0",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/user-event": "^14.5.2",
+    "@testing-library/vue": "^8.0.3",
     "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.12.12"
+    "@types/node": "^20.12.12",
+    "@vue/tsconfig": "^0.5.1",
+    "sass": "^1.77.6"
   }
 }
