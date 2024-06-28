@@ -12,7 +12,7 @@ const expandedSectionId = ref('')
   <div class="sections fr-mt-1w" v-if="sections">
     <div class="section" v-for="section in sections">
       <div v-if="section.type=='title'">
-        <h2 class="fr-text--lg section-title">{{section.title}}</h2>
+        <h2 class="fr-text--lead section-title">{{section.title}}</h2>
       </div>
 
       <div v-else-if="section.type=='richText'">
