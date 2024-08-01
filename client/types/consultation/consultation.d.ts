@@ -26,6 +26,7 @@ export default interface Consultation{
     description: string
   },
   body: {
+    headerSections: Section[]
     sections : Section[]
   },
   participationInfo: {

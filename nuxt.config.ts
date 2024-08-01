@@ -3,6 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   ssr: true,
+
   app: {
     head: {
       title: 'Agora',
@@ -32,31 +33,38 @@ export default defineNuxtConfig({
       },
     },
   },
+
   css: [
     '@gouvfr/dsfr/dist/core/core.main.min.css',
     '@gouvfr/dsfr/dist/component/component.main.min.css',
     '@gouvminint/vue-dsfr/styles',
     'assets/main.scss',
   ],
+
   ignore: [
     '**/*.test.*',
     '**/*.spec.*',
     '**/*.cy.*',
   ],
+
   srcDir: 'client/',
+
   imports: {
     autoImport: true,
   },
+
   modules: [
     process.env.APP_ENV !== 'local' ? '@nuxtjs/robots' : '',
     'nuxt-simple-sitemap',
   ],
+
   runtimeConfig: {
     public: {
       domainName: process.env.DOMAIN_NAME,
       apiBaseUrl: process.env.API_BASE_URL,
     },
   },
+
   hooks: {
     'build:manifest': (manifest) => {
       // Suppression du prefetch pour les icônes
@@ -76,7 +84,10 @@ export default defineNuxtConfig({
       }
     }
   },
+
   sitemap: {
     siteUrl: `https://${process.env.DOMAIN_NAME}`,
-  }
+  },
+
+  compatibilityDate: '2024-08-01'
 })
