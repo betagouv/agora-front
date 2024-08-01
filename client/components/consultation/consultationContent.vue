@@ -88,7 +88,8 @@ defineProps<{
     <span class="fr-text--lg fr-ml-1w" v-html="consultation.infoHeader.description">
       </span>
   </div>
-
+  
+  <ConsultationSections :sections="consultation.body.headerSections"/>
   <ConsultationSections :sections="consultation.body.sections"/>
 
   <DsfrTile
