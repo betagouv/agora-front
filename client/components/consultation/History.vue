@@ -12,18 +12,21 @@ defineProps<{
 <template>
   <div class="history">
     <div class="history-item" v-for="update in history">
-      <ConsultationHistoryUpdate :update="update" :consultation-slug="consultationSlug" :current-update-id="currentUpdateId"/>
+      <ConsultationHistoryUpdate 
+        :update="update" 
+        :consultation-slug="consultationSlug" 
+        :current-update-id="currentUpdateId"/>
     </div>
   </div>
 </template>
 <style>
-.history{
+.history {
   display: flex;
 
-  .history-item{
+  .history-item {
     position: relative;
-    
-    .icon{
+
+    .icon {
       display: block;
       position: relative;
       border-radius: 50%;
@@ -33,8 +36,8 @@ defineProps<{
       height: 2.5em;
       padding: 10px;
     }
-    
-    .content{
+
+    .content {
       padding: 10px;
       background-color: var(--background-open-blue-france-hover);
       color: var(--text-action-high-grey);
@@ -42,11 +45,11 @@ defineProps<{
   }
 }
 
-@media screen and ( min-width: 64em){
-  .history{
+@media screen and ( min-width: 64em) {
+  .history {
     flex-direction: row-reverse;
 
-    .history-item{
+    .history-item {
       width: 80%;
       justify-content: space-around;
 
@@ -61,7 +64,7 @@ defineProps<{
         width: 100%;
       }
 
-      .content{
+      .content {
         max-width: 70%;
         margin-top: 1em;
       }
@@ -72,13 +75,13 @@ defineProps<{
 }
 
 @media screen and ( max-width: 64em) {
-  .history{
+  .history {
     flex-direction: column;
-    
-    .history-item{
+
+    .history-item {
       min-height: 10em;
 
-      .icon{
+      .icon {
         top: 2.5em;
       }
 
@@ -94,7 +97,7 @@ defineProps<{
         height: 96%;
       }
 
-      .content{
+      .content {
         max-height: 70%;
         margin-left: 5em;
         max-width: 50vw;

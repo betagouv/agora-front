@@ -36,7 +36,7 @@ defineProps<{
     <div class="content-date">
       {{ update.date ? new Date(update.date).toLocaleDateString() : 'Prochainement'}}
     </div>
-    <a :href="`/consultations/${consultationSlug}/update/${update.slug ?? update.updateId}`"  class="fr-mt-1w action">
+    <a :href="`/consultations/${consultationSlug}/updates/${update.slug ?? update.updateId}`"  class="fr-mt-1w action">
       {{ update.actionText}}    
     </a>
   </div>
