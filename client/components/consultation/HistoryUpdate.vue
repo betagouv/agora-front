@@ -3,7 +3,7 @@ import { ConsultationUpdate } from '~/client/types/consultation/consultation';
 
 defineProps<{
   update: ConsultationUpdate
-  consultationId: string
+  consultationSlug: string
   currentUpdateId: string
 }>()
 </script>
@@ -36,7 +36,7 @@ defineProps<{
     <div class="content-date">
       {{ update.date ? new Date(update.date).toLocaleDateString() : 'Prochainement'}}
     </div>
-    <a :href="`/consultations/${consultationId}/update/${update.updateId}`"  class="fr-mt-1w action">
+    <a :href="`/consultations/${consultationSlug}/updates/${update.slug ?? update.updateId}`"  class="fr-mt-1w action">
       {{ update.actionText}}    
     </a>
   </div>

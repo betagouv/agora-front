@@ -1,7 +1,11 @@
 import Thematique from "~/client/types/thematique/thematique";
 
 export default interface Consultation{
+  id: string,
   title: string,
+  slug: string,
+  lastUpdateSlug: string,
+  updateId: string,
   coverUrl: string,
   shareText: string,
   thematique: Thematique,
@@ -52,6 +56,7 @@ export default interface Consultation{
 
 export interface ConsultationUpdate{
   updateId: string,
+  slug?: string,
   type: ConsultationUpdateType,
   status: ConsultationUpdateStatus,
   title: string,
