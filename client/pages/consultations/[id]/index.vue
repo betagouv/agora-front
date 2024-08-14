@@ -41,8 +41,6 @@ if (error.value) {
   throw createError({statusCode: error.value!.statusCode})
 }
 
-const currentUpdate = consultation.value.history.find(el => el.status === 'current')
-
 </script>
 
 <template>
@@ -54,9 +52,8 @@ const currentUpdate = consultation.value.history.find(el => el.status === 'curre
 
     <ConsultationHistory v-if="consultation.history"
                          :history="consultation.history"
-                         :consultation-id="consultationId"
                          :consultation-slug="consultation.slug"
-                         :current-update-id="currentUpdate?.slug ?? currentUpdate?.updateId" class="fr-mt-6w"/>
+                         :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId" class="fr-mt-6w"/>
 
     <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultation.feedbackQuestion.picto }}

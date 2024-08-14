@@ -3,7 +3,6 @@ import { ConsultationUpdate } from '~/client/types/consultation/consultation';
 
 defineProps<{
   history: ConsultationUpdate[],
-  consultationId: string,
   consultationSlug: string,
   currentUpdateId: string
 }>()
