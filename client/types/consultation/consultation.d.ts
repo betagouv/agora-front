@@ -1,8 +1,11 @@
 import Thematique from "~/client/types/thematique/thematique";
 
 export default interface Consultation{
+  id: string,
   title: string,
   slug: string,
+  lastUpdateSlug: string,
+  updateId: string,
   coverUrl: string,
   shareText: string,
   thematique: Thematique,
