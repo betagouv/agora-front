@@ -33,7 +33,7 @@ const runtimeConfig = useRuntimeConfig()
 const consultationId = route.params.id
 
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
-const routeUrl = `${apiBaseUrl}/api/v2/consultations/${consultationId}`
+const routeUrl = `${apiBaseUrl}/v2/consultations/${consultationId}`
 
 const {data: consultation, error} = await useFetch(routeUrl) as AsyncData<Consultation, FetchError>
 
