@@ -4,6 +4,7 @@ import { ConsultationUpdate } from '~/client/types/consultation/consultation';
 defineProps<{
   history: ConsultationUpdate[],
   consultationId: string,
+  consultationSlug: string,
   currentUpdateId: string
 }>()
 
@@ -12,7 +13,7 @@ defineProps<{
 <template>
   <div class="history">
     <div class="history-item" v-for="update in history">
-      <ConsultationHistoryUpdate :update="update" :consultation-id="consultationId" :current-update-id="currentUpdateId"/>
+      <ConsultationHistoryUpdate :update="update" :consultation-slug="consultationSlug" :current-update-id="currentUpdateId"/>
     </div>
   </div>
 </template>
