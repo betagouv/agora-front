@@ -39,7 +39,7 @@ if (error.value) {
   <div>
     <ConsultationContent :consultation="consultationUpdate"/>
 
-    <ConsultationHistory v-if="consultationUpdate.history" :history="consultationUpdate.history" :consultation-id="consultationId"
+    <ConsultationHistory v-if="consultationUpdate.history" :history="consultationUpdate.history" :consultation-slug="consultationId"
                          :current-update-id="consultationUpdateId" class="fr-mt-6w"/>
 
     <BandeauTelechargement class="fr-mt-2w"
