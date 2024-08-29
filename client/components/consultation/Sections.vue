@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Section } from '~/client/types/consultation/consultation';
+import { DsfrTranscription } from "@gouvminint/vue-dsfr";
 
 defineProps<{
   sections: Section[]
@@ -33,10 +34,10 @@ const expandedSectionId = ref('')
           Par <b>{{ section.authorInfo.name }}</b>, le {{ new Date(section.authorInfo.date).toLocaleDateString() }}
           <p class="fr-text--xs"> {{ section.authorInfo.message}}</p>
         </div>
-        <DsfrVideo
-          :src="section.url"
-          :transcription-content="section.transcription"
-        />
+        <video controls width="100%" class="fr-responsive-id fr-responsive-vid__player fr-content-media">
+          <source :src=section.url type="video/mp4" />
+        </video>
+        <DsfrTranscription class="fr-my-1" :content="section.transcription" />
       </div>
       
       <div v-else-if="section.type=='image'">
@@ -50,5 +51,4 @@ const expandedSectionId = ref('')
       </div>
     </div>
   </div>
-
 </template>
