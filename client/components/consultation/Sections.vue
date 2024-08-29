@@ -13,7 +13,7 @@ const expandedSectionId = ref('')
   <div class="sections fr-mt-1w" v-if="sections">
     <div class="section" v-for="section in sections">
       <div v-if="section.type=='title'">
-        <h2 class="fr-text--lead section-title">{{section.title}}</h2>
+        <h2 class="fr-text--lead section-title">{{ section.title }}</h2>
       </div>
 
       <div v-else-if="section.type=='richText'">
@@ -32,23 +32,29 @@ const expandedSectionId = ref('')
       <div v-else-if="section.type=='video'">
         <div v-if="section.authorInfo">
           Par <b>{{ section.authorInfo.name }}</b>, le {{ new Date(section.authorInfo.date).toLocaleDateString() }}
-          <p class="fr-text--xs"> {{ section.authorInfo.message}}</p>
+          <p class="fr-text--xs"> {{ section.authorInfo.message }}</p>
         </div>
         <video controls width="100%" class="fr-responsive-id fr-responsive-vid__player fr-content-media">
-          <source :src=section.url type="video/mp4" />
+          <source :src=section.url type="video/mp4"/>
         </video>
-        <DsfrTranscription class="fr-my-1" :content="section.transcription" />
+        <DsfrTranscription class="fr-my-1" :content="section.transcription"/>
       </div>
-      
+
       <div v-else-if="section.type=='image'">
         <img :src="section.url" :alt="section.description">
       </div>
 
       <div class="fr-my-6w" v-else-if="section.type=='accordion'">
-        <DsfrAccordion :title="section.title" :expanded-id="expandedSectionId"  @expand="id => expandedSectionId = id">
+        <DsfrAccordion :title="section.title" :expanded-id="expandedSectionId" @expand="id => expandedSectionId = id">
           <Sections :sections="section.sections"/>
         </DsfrAccordion>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+video {
+  max-height: 70vh;
+}
+</style>

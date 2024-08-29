@@ -42,17 +42,18 @@ if (error.value) {
     <ConsultationHistory v-if="consultationUpdate.history" :history="consultationUpdate.history" :consultation-id="consultationId"
                          :current-update-id="consultationUpdateId" class="fr-mt-6w"/>
 
-    <BandeauTelechargement v-if="consultationUpdate.feedbackQuestion" class="feedback-question fr-mt-6w">
-      <div class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultationUpdate.feedbackQuestion.picto }}
-        {{ consultationUpdate.feedbackQuestion.title }}
-      </div>
-      <div v-html="consultationUpdate.feedbackQuestion.description"/>
-      <div class="fr-text--sm">Téléchargez l'application pour donner votre avis.</div>
-    </BandeauTelechargement>
-
     <BandeauTelechargement class="fr-mt-2w"
                            v-if="consultationUpdate.questionsInfo && new Date(consultationUpdate.questionsInfo.endDate) >= new Date()">
       Pour répondre à cette consultation, rendez-vous sur l’application Agora.
+    </BandeauTelechargement>
+
+
+    <BandeauTelechargement v-else class="feedback-question fr-mt-6w">
+      <div v-if="consultationUpdate.feedbackQuestion" class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultationUpdate.feedbackQuestion.picto }}
+        {{ consultationUpdate.feedbackQuestion.title }}
+      </div>
+      <div v-if="consultationUpdate.feedbackQuestion" v-html="consultationUpdate.feedbackQuestion.description"/>
+      Téléchargez l'application pour donner votre avis.
     </BandeauTelechargement>
 
   </div>
