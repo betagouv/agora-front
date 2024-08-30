@@ -41,6 +41,8 @@ defineProps<{
       padding: 10px;
       background-color: var(--background-open-blue-france-hover);
       color: var(--text-action-high-grey);
+
+      border-radius: 10px;
     }
   }
 }

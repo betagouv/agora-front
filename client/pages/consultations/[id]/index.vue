@@ -25,7 +25,6 @@ onMounted(() => {
   }
 })
 
-const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Consultation citoyenne'}]
 
 const route = useRoute()
 const runtimeConfig = useRuntimeConfig()
@@ -40,6 +39,11 @@ const {data: consultation, error} = await useFetch(routeUrl) as AsyncData<Consul
 if (error.value) {
   throw createError({statusCode: error.value!.statusCode})
 }
+
+const links: Link[] = [
+  {to: '/', text: 'Accueil'}, 
+  {text: `Consultation citoyenne "${consultation.value.title}"`}
+]
 
 </script>
 

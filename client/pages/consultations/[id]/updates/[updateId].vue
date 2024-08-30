@@ -17,11 +17,13 @@ definePageMeta({
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
 const routeUrl = `${apiBaseUrl}/v2/consultations/${consultationId}/updates/${consultationUpdateId}`
 
+
 const {data: consultationUpdate, error} = await useFetch(routeUrl, {
   onResponse({response}) {
+    console.log(response)
     links.value = [
       {to: '/', text: 'Accueil'},
-      {to: `/consultations/${consultationId}`, text: "Consultation citoyenne"},
+      {to: `/consultations/${consultationId}`, text: `Consultation citoyenne "${response._data.title}"`},
       {text: response._data.history?.find(element => element.updateId == response._data.updateId)?.title ?? ""}
     ]
   },
