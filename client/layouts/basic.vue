@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useScheme } from '@gouvminint/vue-dsfr'
 import type { CSSProperties } from 'nuxt/dist/app/compat/capi';
+import { AsyncData } from "nuxt/app";
+import AccueilContent from "~/client/types/content/accueilContent";
+import { FetchError } from "ofetch";
 
 const logoText = ['Gouvernement']
 const a11yCompliance = 'Partiellement conforme'
@@ -64,6 +67,17 @@ onMounted(() => {
 
   watchEffect(() => setScheme(preferences.scheme))
 })
+
+const runtimeConfig = useRuntimeConfig()
+
+const apiBaseUrl = runtimeConfig.public.apiBaseUrl
+const routeUrl = `${apiBaseUrl}/content/page-site-vitrine-accueil`
+
+const { data: accueilContent, error } = await useFetch(routeUrl) as AsyncData<AccueilContent, FetchError>
+
+if (error.value) {
+  throw createError({ statusCode: error.value!.statusCode})
+}
 </script>
 
 <template>
@@ -71,8 +85,8 @@ onMounted(() => {
     :logo-text="logoText"
     :operator-img-src="operatorImgSrc"
     :operator-img-style="operatorImgStyle"
-    service-title="Agora"
-    service-description="La première application qui fait dialoguer les citoyens et le Gouvernement"
+    :service-title="accueilContent.titreHeader"
+    :service-description="accueilContent.sousTitreHeader"
   />
   <main>
     <div class="fr-container fr-mb-8w">

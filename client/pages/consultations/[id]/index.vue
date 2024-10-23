@@ -4,6 +4,7 @@ import { FetchError } from "ofetch";
 import type Consultation from "~/client/types/consultation/consultation";
 import { AsyncData } from "nuxt/app";
 import Link from "~/client/types/dsfr/link";
+import ConsultationsContent from "~/client/types/content/consultationsContent";
 
 definePageMeta({
   layout: 'basic'
@@ -32,12 +33,16 @@ const runtimeConfig = useRuntimeConfig()
 const consultationId = route.params.id
 
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
-const routeUrl = `${apiBaseUrl}/v2/consultations/${consultationId}`
+const routeConsultationUrl = `${apiBaseUrl}/v2/consultations/${consultationId}`
+const {data: consultation, error: errorConsultation} = await useFetch(routeConsultationUrl) as AsyncData<Consultation, FetchError>
+if (errorConsultation.value) {
+  throw createError({statusCode: errorConsultation.value!.statusCode})
+}
 
-const {data: consultation, error} = await useFetch(routeUrl) as AsyncData<Consultation, FetchError>
-
+const routeUrl = `${apiBaseUrl}/content/page-site-vitrine-consultation`
+const { data: content, error } = await useFetch(routeUrl) as AsyncData<ConsultationsContent, FetchError>
 if (error.value) {
-  throw createError({statusCode: error.value!.statusCode})
+  throw createError({ statusCode: error.value!.statusCode})
 }
 
 const links: Link[] = [
@@ -64,7 +69,7 @@ const links: Link[] = [
         {{ consultation.feedbackQuestion.title }}
       </div>
       <div v-html="consultation.feedbackQuestion.description"/>
-      <div class="fr-text--sm">Téléchargez l'application pour donner votre avis.</div>
+      <div class="fr-text--sm" v-html="content.donnezVotreAvis"></div>
     </BandeauTelechargement>
 
     <BandeauTelechargement class="fr-mt-2w" v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()">
@@ -75,6 +80,8 @@ const links: Link[] = [
 </template>
 
 <style>
+
+
 .info-header, .info-response {
   background-color: #f5f7ff;
   border: 1px solid #c2cefd;
