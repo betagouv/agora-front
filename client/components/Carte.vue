@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  data: { titre: string, description: string, img: string }
+  data: { description: string, img: string }
 }>()
 </script>
 
@@ -12,9 +12,6 @@ defineProps<{
         :src="data.img"
         class="agora-carte__img"
       >
-      <h2 class="agora-carte__titre fr-my-2w">
-        {{ data.titre }}
-      </h2>
       <div
         class="agora-carte__desc"
         v-html="data.description"
@@ -37,13 +34,13 @@ defineProps<{
     border: 1px var(--grey-950-100) solid;
   }
 
-  &__titre {
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-  }
-
   &__desc {
     font-size: 0.9rem;
+
+    :deep(h2) {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
   }
 }
 
@@ -51,6 +48,6 @@ defineProps<{
   .agora-carte__titre {
     line-height: 1.75rem;
     font-size: 1.25rem;
-  }  
+  }
 }
 </style>

@@ -1,7 +1,23 @@
 <script setup lang="ts">
 
+import { FetchError } from "ofetch";
+import AccueilContent from "~/client/types/content/accueilContent";
+import { AsyncData } from "nuxt/app";
+import { Ref } from "vue";
+
 const mobilePlatformRef : Ref<string| null> = ref(null)
 const isMobileRef = ref(false)
+
+const runtimeConfig = useRuntimeConfig()
+
+const apiBaseUrl = runtimeConfig.public.apiBaseUrl
+const routeUrl = `${apiBaseUrl}/content/page-site-vitrine-accueil`
+
+const { data: accueilContent, error } = await useFetch(routeUrl) as AsyncData<AccueilContent, FetchError>
+
+if (error.value) {
+  throw createError({ statusCode: error.value!.statusCode})
+}
 
 onMounted(()=>{
   const userAgent = navigator.userAgent
@@ -21,10 +37,9 @@ onMounted(()=>{
   <div class="hero fr-grid-row">
     <div class="fr-col-12 fr-col-md-6 fr-grid-row fr-grid-row--middle">
       <div>
-        <h1>Agora</h1>
+        <h1>{{accueilContent.titreBody}}</h1>
         <p>
-          Les citoyens aspirent à partager leurs convictions et idées régulièrement, pas seulement à chaque élection&nbsp;: c’est pourquoi Agora
-          propose, pour la première fois, de créer les conditions d’un dialogue démocratique continu entre les citoyens et le Gouvernement.
+          {{accueilContent.descriptionBody}}
         </p>
         <p>
           <b></b>
