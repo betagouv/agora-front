@@ -32,8 +32,6 @@ const texteSoutienWithUsername = content.value.texteSoutien
   .replace("{}", qag.value.supportCount)
   .replace("{}", qag.value.username)
 
-console.log(qag.value.username, texteSoutienWithUsername)
-
 const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'}]
 
 </script>
