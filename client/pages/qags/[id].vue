@@ -4,7 +4,6 @@ import type Qag from '~/client/types/qag/qag';
 import { FetchError } from "ofetch";
 import { AsyncData } from "nuxt/app";
 import QuestionAuGouvernementContent from "~/client/types/content/questionAuGouvernementContent";
-import { DsfrTranscription } from "@gouvminint/vue-dsfr";
 
 definePageMeta({
   layout: 'basic'
@@ -69,10 +68,10 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
         Par <b>{{ qag.response.author }}</b>, le {{ new Date(qag.response.responseDate).toLocaleDateString() }}
         <p class="fr-text--xs"> {{ qag.response.authorDescription }}</p>
 
-        <video controls width="100%" class="fr-responsive-id fr-responsive-vid__player fr-content-media">
-          <source :src=qag.response.videoUrl type="video/mp4"/>
-        </video>
-        <DsfrTranscription class="fr-my-1" :content="qag.response.transcription"/>
+        <DsfrVideo
+          :src="qag.response.videoUrl"
+          :transcription-content="qag.response.transcription"
+        />
 
         <div v-if="qag.response.additionalInfo" class="additionnal-info">
           <span class="fr-text--lead fr-mb-4w">{{ qag.response.additionalInfo.title }}</span>
