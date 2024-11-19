@@ -2,9 +2,12 @@
 import Consultation from "~/client/types/consultation/consultation";
 import svgBook from "@gouvfr/dsfr/dist/artwork/pictograms/leisure/book.svg";
 
-defineProps<{
+const props = defineProps<{
   consultation: Consultation
 }>()
+
+const estEnLancement = props.consultation.consultationDates?.endDate
+  && new Date() < new Date(props.consultation.consultationDates.endDate)
 </script>
 
 <template>
@@ -54,7 +57,7 @@ defineProps<{
               </span>
             <span class="fr-pl-1v" v-else>
                 {{ consultation.questionsInfo.participantCount }} participants
-              </span>
+            </span>
             <div class="fr-mt-1w fr-ml-3w">
               <div class="progress-bar fr-mb-1w">
                 <div class="progress-value" :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
@@ -74,12 +77,19 @@ defineProps<{
     </div>
   </div>
 
+  <ConsultationHistory
+    v-if="consultation.history && !estEnLancement"
+    :history="consultation.history"
+    :consultation-slug="consultation.slug"
+    :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId"
+    class="fr-my-6w"
+  />
+
   <div v-if="consultation.responsesInfo" class="info-response fr-px-2w fr-py-1w fr-mb-1w">
-      <span class="fr-text--lead">
-        {{ consultation.responsesInfo.picto }}
-      </span>
-    <span class="fr-text--lg fr-ml-1w" v-html="consultation.responsesInfo.description">
-      </span>
+    <span class="fr-text--lead">
+      {{ consultation.responsesInfo.picto }}
+    </span>
+    <span class="fr-text--lg fr-ml-1w" v-html="consultation.responsesInfo.description"></span>
   </div>
 
   <div v-if="consultation.infoHeader" class="info-header fr-px-2w fr-py-1w fr-mb-1w">

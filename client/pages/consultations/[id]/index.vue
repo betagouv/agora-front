@@ -43,22 +43,12 @@ const { data: content, error } = await useFetch(routeUrl) as AsyncData<Consultat
 if (error.value) {
   throw createError({ statusCode: error.value!.statusCode})
 }
-
-const estEnLancement = consultation.value?.consultationDates?.endDate
-  && new Date() < new Date(consultation.value.consultationDates.endDate)
 </script>
 
 <template>
   <div>
 
     <ConsultationContent :consultation="consultation"/>
-
-    <!--     ToDo: bouger dans le content -->
-    <ConsultationHistory v-if="consultation.history && !estEnLancement"
-                         :history="consultation.history"
-                         :consultation-slug="consultation.slug"
-                         :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId"
-                         class="fr-my-6w" />
 
     <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultation.feedbackQuestion.picto }}
