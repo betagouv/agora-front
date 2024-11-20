@@ -2,13 +2,22 @@
 import Consultation from "~/client/types/consultation/consultation";
 import svgBook from "@gouvfr/dsfr/dist/artwork/pictograms/leisure/book.svg";
 
-defineProps<{
+const props = defineProps<{
   consultation: Consultation
 }>()
+
+const estEnLancement = props.consultation.consultationDates?.endDate
+  && new Date() < new Date(props.consultation.consultationDates.endDate)
 </script>
 
 <template>
-  <div class="fr-grid fr-mb-1w">
+  <p class="announcer fr-h3 fr-my-4w">
+      Grande consultation citoyenne
+      <span class="fr-text--xl">lancée par le ministère ???</span>
+<!--     ToDo: compléter le ministère-->
+  </p>
+  
+  <div class="fr-grid fr-mb-2w">
     <div class="fr-grid-row fr-grid-row--middle fr-grid-row--gutters">
       <div class="fr-col-md-6 fr-col-12">
         <img class="fr-responsive-img" :src="consultation.coverUrl" alt="">
@@ -48,7 +57,7 @@ defineProps<{
               </span>
             <span class="fr-pl-1v" v-else>
                 {{ consultation.questionsInfo.participantCount }} participants
-              </span>
+            </span>
             <div class="fr-mt-1w fr-ml-3w">
               <div class="progress-bar fr-mb-1w">
                 <div class="progress-value" :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
@@ -60,33 +69,34 @@ defineProps<{
       </div>
     </div>
   </div>
-  <div v-if="consultation.consultationDates" class="consultation-dates fr-mb-4w">
-    <h2 class="fr-text--lead title">Lancement de la consultation</h2>
-    <div class="fr-mb-1w">
-      <VIcon
-        name="ri-calendar-2-line"
-      />
-      <span class="fr-ml-1w">
-          Du {{ new Date(consultation.consultationDates.startDate).toLocaleDateString()}}
-          au {{ new Date(consultation.consultationDates.endDate).toLocaleDateString()}}
-        </span>
+
+  <div v-if="consultation.goals" class="goals fr-p-3w fr-my-4w" >
+    <div class="fr-mt-1v" v-for="goal in consultation.goals">
+      <span class="fr-text--lead fr-mr-2w">{{ goal.picto }}</span>
+      <span v-html="goal.description"></span>
     </div>
   </div>
 
+  <ConsultationHistory
+    v-if="consultation.history && !estEnLancement"
+    :history="consultation.history"
+    :consultation-slug="consultation.slug"
+    :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId"
+    class="fr-my-6w"
+  />
+
   <div v-if="consultation.responsesInfo" class="info-response fr-px-2w fr-py-1w fr-mb-1w">
-      <span class="fr-text--lead">
-        {{ consultation.responsesInfo.picto}}
-      </span>
-    <span class="fr-text--lg fr-ml-1w" v-html="consultation.responsesInfo.description">
-      </span>
+    <span class="fr-text--lead">
+      {{ consultation.responsesInfo.picto }}
+    </span>
+    <span class="fr-text--lg fr-ml-1w" v-html="consultation.responsesInfo.description"></span>
   </div>
 
   <div v-if="consultation.infoHeader" class="info-header fr-px-2w fr-py-1w fr-mb-1w">
       <span class="fr-text--lead">
-        {{ consultation.infoHeader.picto}}
+        {{ consultation.infoHeader.picto }}
       </span>
-    <span class="fr-text--lg fr-ml-1w" v-html="consultation.infoHeader.description">
-      </span>
+    <span class="fr-text--lg fr-ml-1w" v-html="consultation.infoHeader.description"></span>
   </div>
   
   <ConsultationSections :sections="consultation.body.headerSections"/>
@@ -101,13 +111,6 @@ defineProps<{
     :img-src="svgBook"
     class="fr-mb-4w"
   />
-
-  <div v-if="consultation.goals" class="goals fr-p-3w fr-text--sm" >
-    <div class="fr-mt-1v" v-for="goal in consultation.goals">
-      <span class="fr-text--lead fr-mr-2w">{{ goal.picto }}</span>
-      <span v-html="goal.description"></span>
-    </div>
-  </div>
 
   <div v-if="consultation.footer" class="footer">
     <h2 class="fr-text--lead title">{{ consultation.footer.title }}</h2>
@@ -132,7 +135,6 @@ defineProps<{
       background-color: var(--text-title-blue-france);
       border-radius: 8px;
       height: 10px;
-
     }
   }
 }
@@ -156,5 +158,12 @@ defineProps<{
 
 .goals{
   background-color: #eeeeee;
+}
+
+.announcer {
+  text-align: center;
+  > span {
+    display: block;
+  }
 }
 </style>

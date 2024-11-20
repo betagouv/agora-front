@@ -3,7 +3,6 @@
 import { FetchError } from "ofetch";
 import type Consultation from "~/client/types/consultation/consultation";
 import { AsyncData } from "nuxt/app";
-import Link from "~/client/types/dsfr/link";
 import ConsultationsContent from "~/client/types/content/consultationsContent";
 
 definePageMeta({
@@ -44,25 +43,12 @@ const { data: content, error } = await useFetch(routeUrl) as AsyncData<Consultat
 if (error.value) {
   throw createError({ statusCode: error.value!.statusCode})
 }
-
-const links: Link[] = [
-  {to: '/', text: 'Accueil'}, 
-  {text: `Consultation citoyenne "${consultation.value.title}"`}
-]
-
 </script>
 
 <template>
-  <DsfrBreadcrumb :links="links"/>
-
   <div>
 
     <ConsultationContent :consultation="consultation"/>
-
-    <ConsultationHistory v-if="consultation.history"
-                         :history="consultation.history"
-                         :consultation-slug="consultation.slug"
-                         :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId" class="fr-mt-6w"/>
 
     <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
       <div class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultation.feedbackQuestion.picto }}
@@ -72,41 +58,15 @@ const links: Link[] = [
       <div class="fr-text--sm" v-html="content.donnezVotreAvis"></div>
     </BandeauTelechargement>
 
-    <BandeauTelechargement class="fr-mt-2w" v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()">
-      Pour répondre à cette consultation, rendez-vous sur l’application Agora.
-    </BandeauTelechargement>
+    <BandeauTelechargementAdaptatif
+      title="Pour participer, rendez-vous sur l'application Agora"
+      v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
+    />
 
   </div>
 </template>
 
 <style>
-
-
-.info-header, .info-response {
-  background-color: #f5f7ff;
-  border: 1px solid #c2cefd;
-  border-radius: 10px;
-}
-
-.info-question {
-  .progress-bar {
-    background-color: #dcdcdc;
-    border-radius: 8px;
-    height: 10px;
-
-    .progress-value {
-      background-color: var(--text-title-blue-france);
-      border-radius: 8px;
-      height: 10px;
-
-    }
-  }
-}
-
-.call-to-action {
-  background: var(--background-open-blue-france-hover);
-}
-
 .ov-icon {
   color: var(--text-title-blue-france)
 }
