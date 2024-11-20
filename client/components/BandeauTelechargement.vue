@@ -59,8 +59,6 @@ onMounted(()=>{
         max-width: 100vw;">
     </div>
   </div>
-
-
 </template>
 
 <style>

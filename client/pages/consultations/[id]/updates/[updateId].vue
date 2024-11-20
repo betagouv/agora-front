@@ -17,10 +17,8 @@ definePageMeta({
 const apiBaseUrl = runtimeConfig.public.apiBaseUrl
 const routeUrl = `${apiBaseUrl}/v2/consultations/${consultationId}/updates/${consultationUpdateId}`
 
-
 const {data: consultationUpdate, error} = await useFetch(routeUrl, {
   onResponse({response}) {
-    console.log(response)
     links.value = [
       {to: '/', text: 'Accueil'},
       {to: `/consultations/${consultationId}`, text: `Consultation citoyenne "${response._data.title}"`},
@@ -32,7 +30,6 @@ const {data: consultationUpdate, error} = await useFetch(routeUrl, {
 if (error.value) {
   throw createError({statusCode: error.value!.statusCode})
 }
-
 </script>
 
 <template>
@@ -41,33 +38,16 @@ if (error.value) {
   <div>
     <ConsultationContent :consultation="consultationUpdate"/>
 
-    <ConsultationHistory v-if="consultationUpdate.history" :history="consultationUpdate.history" :consultation-slug="consultationId"
-                         :current-update-id="consultationUpdateId" class="fr-mt-6w"/>
+    <BandeauTelechargementAdaptatif
+      v-if="consultationUpdate.questionsInfo && new Date(consultationUpdate.questionsInfo.endDate) >= new Date()"
+      title="Pour répondre à cette consultation, rendez-vous sur l’application Agora."/>
 
-    <BandeauTelechargement class="fr-mt-2w"
-                           v-if="consultationUpdate.questionsInfo && new Date(consultationUpdate.questionsInfo.endDate) >= new Date()">
-      Pour répondre à cette consultation, rendez-vous sur l’application Agora.
-    </BandeauTelechargement>
-
-
-    <BandeauTelechargement v-else class="feedback-question fr-mt-6w">
-      <div v-if="consultationUpdate.feedbackQuestion" class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultationUpdate.feedbackQuestion.picto }}
-        {{ consultationUpdate.feedbackQuestion.title }}
-      </div>
-      <div v-if="consultationUpdate.feedbackQuestion" v-html="consultationUpdate.feedbackQuestion.description"/>
-      Téléchargez l'application pour donner votre avis.
-    </BandeauTelechargement>
-
+    <BandeauTelechargementAdaptatif
+      title="Téléchargez l'application pour donner votre avis."
+    />
   </div>
 
 </template>
 
 <style>
-
-.feedback-question {
-  .feedback-question-title {
-    color: var(--text-title-blue-france)
-  }
-}
-
 </style>

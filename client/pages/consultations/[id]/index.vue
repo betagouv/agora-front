@@ -67,26 +67,9 @@ if (error.value) {
 </template>
 
 <style>
-.ov-icon {
-  color: var(--text-title-blue-france)
-}
-
-.sections {
-  .section {
-    .section-title {
-      color: var(--text-title-blue-france)
-    }
-  }
-}
-
 .feedback-question {
   .feedback-question-title {
     color: var(--text-title-blue-france)
   }
 }
-
-.title {
-  color: var(--text-title-blue-france)
-}
-
 </style>

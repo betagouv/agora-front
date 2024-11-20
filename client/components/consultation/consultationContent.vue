@@ -11,12 +11,11 @@ const estEnLancement = props.consultation.consultationDates?.endDate
 </script>
 
 <template>
-  <p class="announcer fr-h3 fr-my-4w">
-      Grande consultation citoyenne
-      <span class="fr-text--xl">lancée par le ministère ???</span>
-<!--     ToDo: compléter le ministère-->
+  <p class="announcer fr-my-4w fr-display--md">
+    Grande consultation citoyenne
+    <span class="fr-display--xs">lancée par le ministère ???</span>
   </p>
-  
+
   <div class="fr-grid fr-mb-2w">
     <div class="fr-grid-row fr-grid-row--middle fr-grid-row--gutters">
       <div class="fr-col-md-6 fr-col-12">
@@ -33,7 +32,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
             <VIcon
               name="ri-calendar-2-line"
             />
-            Jusqu'au {{ new Date(consultation.questionsInfo.endDate).toLocaleDateString()}}
+            Jusqu'au {{ new Date(consultation.questionsInfo.endDate).toLocaleDateString() }}
           </div>
           <div class="fr-mb-1w">
             <VIcon
@@ -60,7 +59,8 @@ const estEnLancement = props.consultation.consultationDates?.endDate
             </span>
             <div class="fr-mt-1w fr-ml-3w">
               <div class="progress-bar fr-mb-1w">
-                <div class="progress-value" :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
+                <div class="progress-value"
+                     :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>
               </div>
               Prochain objectif : {{ consultation.questionsInfo.participantCountGoal }} participants !
             </div>
@@ -70,7 +70,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
     </div>
   </div>
 
-  <div v-if="consultation.goals" class="goals fr-p-3w fr-my-4w" >
+  <div v-if="consultation.goals" class="goals fr-p-3w fr-my-4w">
     <div class="fr-mt-1v" v-for="goal in consultation.goals">
       <span class="fr-text--lead fr-mr-2w">{{ goal.picto }}</span>
       <span v-html="goal.description"></span>
@@ -98,7 +98,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
       </span>
     <span class="fr-text--lg fr-ml-1w" v-html="consultation.infoHeader.description"></span>
   </div>
-  
+
   <ConsultationSections :sections="consultation.body.headerSections"/>
   <ConsultationSections :sections="consultation.body.sections"/>
 
@@ -111,27 +111,22 @@ const estEnLancement = props.consultation.consultationDates?.endDate
     :img-src="svgBook"
     class="fr-mb-4w"
   />
-
-  <div v-if="consultation.footer" class="footer">
-    <h2 class="fr-text--lead title">{{ consultation.footer.title }}</h2>
-    <div v-html="consultation.footer.description"></div>
-  </div>
 </template>
 
 <style>
-.info-header, .info-response{
+.info-header, .info-response {
   background-color: #f5f7ff;
   border: 1px solid #c2cefd;
   border-radius: 10px;
 }
 
-.info-question{
-  .progress-bar{
+.info-question {
+  .progress-bar {
     background-color: #dcdcdc;
     border-radius: 8px;
     height: 10px;
 
-    .progress-value{
+    .progress-value {
       background-color: var(--text-title-blue-france);
       border-radius: 8px;
       height: 10px;
@@ -139,29 +134,13 @@ const estEnLancement = props.consultation.consultationDates?.endDate
   }
 }
 
-.call-to-action{
-  background: var(--background-open-blue-france-hover);
-}
-.ov-icon{
-  color: var(--text-title-blue-france)
-}
-.sections{
-  .section{
-    .section-title{
-      color: var(--text-title-blue-france)
-    }
-  }
-}
-.title{
-  color: var(--text-title-blue-france)
-}
-
-.goals{
+.goals {
   background-color: #eeeeee;
 }
 
 .announcer {
   text-align: center;
+
   > span {
     display: block;
   }
