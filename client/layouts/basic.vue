@@ -32,9 +32,6 @@ const mandatoryLinks: {label: string, to: string}[] = [{
 }, {
   label: 'Charte de participation',
   to: '/charte-participation',
-}, {
-  label: 'Retours sur l\'application',
-  to: '/retours-application',
 }]
 
 const ecosystemLinks: {label: string, href: string}[] = [{  
