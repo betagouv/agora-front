@@ -34,19 +34,9 @@ if (error.value) {
 
 <template>
   <DsfrBreadcrumb :links="links"/>
-
   <div>
     <ConsultationContent :consultation="consultationUpdate"/>
-
-    <BandeauTelechargementAdaptatif
-      v-if="consultationUpdate.questionsInfo && new Date(consultationUpdate.questionsInfo.endDate) >= new Date()"
-      title="Pour répondre à cette consultation, rendez-vous sur l’application Agora."/>
-
-    <BandeauTelechargementAdaptatif
-      title="Téléchargez l'application pour donner votre avis."
-    />
   </div>
-
 </template>
 
 <style>

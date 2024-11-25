@@ -47,29 +47,9 @@ if (error.value) {
 
 <template>
   <div>
-
     <ConsultationContent :consultation="consultation"/>
-
-    <BandeauTelechargement v-if="consultation.feedbackQuestion" class="feedback-question fr-mt-6w">
-      <div class="fr-text--lg fr-mb-1w feedback-question-title">{{ consultation.feedbackQuestion.picto }}
-        {{ consultation.feedbackQuestion.title }}
-      </div>
-      <div v-html="consultation.feedbackQuestion.description"/>
-      <div class="fr-text--sm" v-html="content.donnezVotreAvis"></div>
-    </BandeauTelechargement>
-
-    <BandeauTelechargementAdaptatif
-      title="Pour participer, rendez-vous sur l'application Agora"
-      v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
-    />
-
   </div>
 </template>
 
 <style>
-.feedback-question {
-  .feedback-question-title {
-    color: var(--text-title-blue-france)
-  }
-}
 </style>

@@ -31,7 +31,7 @@ const expandedSectionId = ref('')
 
       <div v-else-if="section.type=='video'">
         <div v-if="section.authorInfo">
-          Par <b>{{ section.authorInfo.name }}</b>, le {{ new Date(section.authorInfo.date).toLocaleDateString() }}
+          Par <b>{{ section.authorInfo.name }}</b>, le {{ new Date(section.authorInfo.date).toLocaleDateString("fr-FR") }}
           <p class="fr-text--xs"> {{ section.authorInfo.message }}</p>
         </div>
         <video controls width="100%" class="fr-responsive-id fr-responsive-vid__player fr-content-media">

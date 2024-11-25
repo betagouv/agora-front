@@ -6,21 +6,25 @@ const props = defineProps<{
   consultation: Consultation
 }>()
 
-const estEnLancement = props.consultation.consultationDates?.endDate
+const estEnCours = props.consultation.consultationDates?.endDate
   && new Date() < new Date(props.consultation.consultationDates.endDate)
+
+const estSurLaPageLancement = props.consultation.goals != null
+
+const commanditaire = props.consultation.goals?.at(0)
+  ?.description.split(" par ")[1]
+  .replace(/<[^>]*>?/gm, '')
+
 </script>
 
 <template>
-  <p class="announcer fr-my-4w fr-display--md">
+  <p v-if="estSurLaPageLancement" class="announcer fr-my-8w fr-display--md">
     Grande consultation citoyenne
-    <span class="fr-display--xs">lancée par le ministère ???</span>
+    <span class="fr-display--xs">lancée par {{commanditaire}}</span>
   </p>
 
   <div class="fr-grid fr-mb-2w">
     <div class="fr-grid-row fr-grid-row--middle fr-grid-row--gutters">
-      <div class="fr-col-md-6 fr-col-12">
-        <img class="fr-responsive-img" :src="consultation.coverUrl" alt="">
-      </div>
       <div class="fr-col-md-6 fr-col-12">
         <p class="fr-text--lead">
           {{ consultation.thematique.picto + " " + consultation.thematique.label }}
@@ -32,7 +36,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
             <VIcon
               name="ri-calendar-2-line"
             />
-            Jusqu'au {{ new Date(consultation.questionsInfo.endDate).toLocaleDateString() }}
+            Jusqu'au {{ new Date(consultation.questionsInfo.endDate).toLocaleDateString("fr-FR") }}
           </div>
           <div class="fr-mb-1w">
             <VIcon
@@ -51,12 +55,8 @@ const estEnLancement = props.consultation.consultationDates?.endDate
               name="ri-group-line"
             />
             <span class="fr-pl-1v" v-if="consultation.questionsInfo.participantCount == 0">Aucun participant</span>
-            <span class="fr-pl-1v" v-else-if="consultation.questionsInfo.participantCount == 1">
-                1 participant
-              </span>
-            <span class="fr-pl-1v" v-else>
-                {{ consultation.questionsInfo.participantCount }} participants
-            </span>
+            <span class="fr-pl-1v" v-else-if="consultation.questionsInfo.participantCount == 1">1 participant</span>
+            <span class="fr-pl-1v" v-else>{{ consultation.questionsInfo.participantCount }} participants</span>
             <div class="fr-mt-1w fr-ml-3w">
               <div class="progress-bar fr-mb-1w">
                 <div class="progress-value"
@@ -66,6 +66,9 @@ const estEnLancement = props.consultation.consultationDates?.endDate
             </div>
           </div>
         </div>
+      </div>
+      <div class="fr-col-md-6 fr-col-12">
+        <img class="fr-responsive-img" :src="consultation.coverUrl" alt="">
       </div>
     </div>
   </div>
@@ -78,7 +81,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
   </div>
 
   <ConsultationHistory
-    v-if="consultation.history && !estEnLancement"
+    v-if="consultation.history && !estEnCours"
     :history="consultation.history"
     :consultation-slug="consultation.slug"
     :current-update-id="consultation.lastUpdateSlug ?? consultation.updateId"
@@ -111,6 +114,12 @@ const estEnLancement = props.consultation.consultationDates?.endDate
     :img-src="svgBook"
     class="fr-mb-4w"
   />
+
+  <BandeauTelechargementAdaptatif
+    v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
+    title="Pour répondre à cette consultation, rendez-vous sur l’application Agora."/>
+
+  <BandeauTelechargementAdaptatif v-else title="Téléchargez l'application pour donner votre avis."/>
 </template>
 
 <style>
@@ -139,6 +148,7 @@ const estEnLancement = props.consultation.consultationDates?.endDate
 }
 
 .announcer {
+  color: var(--blue-france-sun-113-625);
   text-align: center;
 
   > span {

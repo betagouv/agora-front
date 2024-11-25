@@ -66,7 +66,7 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
       </p>
 
       <div class="fr-px-1w">
-        Par <b>{{ qag.response.author }}</b>, le {{ new Date(qag.response.responseDate).toLocaleDateString() }}
+        Par <b>{{ qag.response.author }}</b>, le {{ new Date(qag.response.responseDate).toLocaleDateString("fr-FR") }}
         <p class="fr-text--xs"> {{ qag.response.authorDescription }}</p>
 
         <DsfrVideo
