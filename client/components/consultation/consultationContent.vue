@@ -9,6 +9,8 @@ const props = defineProps<{
 const estEnCours = props.consultation.consultationDates?.endDate
   && new Date() < new Date(props.consultation.consultationDates.endDate)
 
+const estSurLaPageLancement = props.consultation.goals != null
+
 const commanditaire = props.consultation.goals?.at(0)
   ?.description.split(" par ")[1]
   .replace(/<[^>]*>?/gm, '')
@@ -16,7 +18,7 @@ const commanditaire = props.consultation.goals?.at(0)
 </script>
 
 <template>
-  <p class="announcer fr-my-8w fr-display--md">
+  <p v-if="estSurLaPageLancement" class="announcer fr-my-8w fr-display--md">
     Grande consultation citoyenne
     <span class="fr-display--xs">lancée par {{commanditaire}}</span>
   </p>
