@@ -88,13 +88,6 @@ const commanditaire = props.consultation.goals?.at(0)
     class="fr-my-6w"
   />
 
-  <div v-if="consultation.infoHeader" class="info-header fr-px-2w fr-py-1w fr-mb-1w">
-      <span class="fr-text--lead">
-        {{ consultation.infoHeader.picto }}
-      </span>
-    <span class="fr-text--lg fr-ml-1w" v-html="consultation.infoHeader.description"></span>
-  </div>
-
   <ConsultationSections :sections="consultation.body.headerSections"/>
   <ConsultationSections :sections="consultation.body.sections"/>
 
