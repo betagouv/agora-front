@@ -51,7 +51,9 @@ export default interface Consultation{
     title: string,
     description: string
   } | null,
-  history: ConsultationUpdate[]
+  history: ConsultationUpdate[],
+  titrePageWeb: string,
+  sousTitrePageWeb: string,
 }
 
 export interface ConsultationUpdate{

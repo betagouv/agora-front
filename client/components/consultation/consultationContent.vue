@@ -11,19 +11,16 @@ const estEnCours = props.consultation.consultationDates?.endDate
 
 const estSurLaPageLancement = props.consultation.goals != null
 
-const commanditaire = props.consultation.goals?.at(0)
-  ?.description.split(" par ")[1]
-  .replace(/<[^>]*>?/gm, '')
-
 </script>
 
 <template>
   <p v-if="estSurLaPageLancement" class="announcer fr-my-8w fr-display--md">
-    Grande consultation citoyenne
-    <span class="fr-display--xs">lancée par {{commanditaire}}</span>
+    {{ consultation.titrePageWeb }}
+    <span class="fr-display--xs">{{ consultation.sousTitrePageWeb }}</span>
   </p>
+<!--  <ConsultationShare :shareText="props.consultation.shareText" :shareTitle="props.consultation.title"/>-->
 
-  <div class="fr-grid fr-mb-2w">
+  <div class="fr-grid fr-mb-2w fr-mt-6w">
     <div class="fr-grid-row fr-grid-row--middle fr-grid-row--gutters">
       <div class="fr-col-md-6 fr-col-12">
         <p class="fr-text--lead">
@@ -100,7 +97,6 @@ const commanditaire = props.consultation.goals?.at(0)
     :img-src="svgBook"
     class="fr-mb-4w"
   />
-
   <BandeauTelechargementAdaptatif
     v-if="consultation.questionsInfo && new Date(consultation.questionsInfo.endDate) >= new Date()"
     title="Pour répondre à cette consultation, rendez-vous sur l’application Agora."/>
@@ -109,12 +105,6 @@ const commanditaire = props.consultation.goals?.at(0)
 </template>
 
 <style>
-.info-header, .info-response {
-  background-color: #f5f7ff;
-  border: 1px solid #c2cefd;
-  border-radius: 10px;
-}
-
 .info-question {
   .progress-bar {
     background-color: #dcdcdc;
