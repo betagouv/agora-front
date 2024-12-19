@@ -1,5 +1,5 @@
 server {
-    server_name localhost;
+    server_name <%= ENV['DOMAIN_NAME'] %>;
     listen <%= ENV['PORT'] %>;
 
     location / {
