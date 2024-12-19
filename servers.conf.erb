@@ -1,6 +1,6 @@
 server {
     server_name localhost;
-    listen 80;
+    listen <%= ENV['PORT'] %>;
 
     location / {
         proxy_set_header  X-Remote-Address $remote_addr;
@@ -11,8 +11,8 @@ server {
 }
 
 server {
-    listen 80;
     server_name participation-citoyenne.fr www.participation-citoyenne.fr;
+    listen <%= ENV['PORT'] %>;
     
     location / {
       return 301 https://agora.gouv.fr/participation-citoyenne;
