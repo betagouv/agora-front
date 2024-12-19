@@ -1,1 +1,1 @@
-web: echo 'a' && (bin/run &) && node .output/server/index.mjs
+web: nginx -g 'daemon off;' && node .output/server/index.mjs
