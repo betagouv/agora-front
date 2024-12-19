@@ -1,14 +1,14 @@
-# server {
-#     server_name localhost;
-#     listen 80;
-# 
-#     location / {
-#         proxy_set_header  X-Remote-Address $remote_addr;
-#         proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-#         proxy_pass http://localhost:3000;
-#         proxy_redirect default;
-#     }
-# }
+server {
+    server_name localhost;
+    listen 80;
+
+    location / {
+        proxy_set_header  X-Remote-Address $remote_addr;
+        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:3000;
+        proxy_redirect default;
+    }
+}
 
 server {
     listen 80;
