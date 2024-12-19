@@ -1,1 +1,1 @@
-web: (bin/run &) && node .output/server/index.mjs
+web: echo 'a' && (bin/run &) && node .output/server/index.mjs
