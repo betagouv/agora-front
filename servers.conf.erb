@@ -2,15 +2,11 @@ server {
     server_name localhost;
     listen 80;
 
-    root /usr/share/nginx/html;  # Dossier où est placé le build de Nuxt
-    index index.html;
-
     location / {
-        try_files $uri /index.html;
-    }
-
-    location /_nuxt/ {
-        proxy_pass http://localhost:3000;  # Port où tourne l'application Nuxt
+        proxy_pass http://localhost:3000;  # Port où tourne Nuxt via index.mjs
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
