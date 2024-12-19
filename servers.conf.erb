@@ -1,6 +1,6 @@
 server {
-    server_name _;
-    listen 80;
+    server_name localhost;
+    listen <%= ENV['PORT'] %>;
 
     location / {
         proxy_set_header  X-Remote-Address $remote_addr;
