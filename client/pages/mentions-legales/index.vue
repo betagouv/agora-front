@@ -2,7 +2,6 @@
 import type { Ref } from 'vue'
 import type Link from '~/client/types/dsfr/link';
 import { AsyncData } from "nuxt/app";
-import DeclarationAccessibiliteContent from "~/client/types/content/declarationAccessibiliteContent";
 import { FetchError } from "ofetch";
 import MentionsLegalesContent from "~/client/types/content/mentionsLegalesContent";
 
