@@ -1,14 +1,3 @@
-server {
-    server_name <%= ENV['DOMAIN_NAME'] %>;
-    listen <%= ENV['PORT'] %>;
-
-    location / {
-        proxy_set_header  X-Remote-Address $remote_addr;
-        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_pass http://localhost:<%= ENV['NITRO_PORT'] %>;
-        proxy_redirect default;
-    }
-}
 
 server {
     server_name agora.incubateur.net www.agora.incubateur.net participation-citoyenne.gouv.fr www.participation-citoyenne.gouv.fr;
