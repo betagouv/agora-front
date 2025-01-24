@@ -14,8 +14,8 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Participa
 <template>
   <DsfrBreadcrumb :links="links" />
   <div class="fr-grid-row">
-    <img class="fr-col-md-6" src="/en_construction.png"  alt="" />
-    <h3 class="fr-col-md-6 fr-mt-5w">Le site <i>participation-citoyenne.gouv.fr</i> fait peau neuve !
+    <img class="fr-col-6" src="/en_construction.png"  alt="" />
+    <h3 class="fr-col-6 fr-mt-5w">Le site <i>participation-citoyenne.gouv.fr</i> fait peau neuve !
       <br><br>
       Nous sommes bientôt de retour.</h3>  
   </div>
@@ -23,6 +23,7 @@ const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Participa
 
 <style>
 img {
+  object-fit: contain;
 }
 
 h3 {
