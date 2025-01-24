@@ -6,7 +6,7 @@ definePageMeta({
 })
 
 useHead({
-  title: 'Mentions légales - Agora',
+  title: 'Participation citoyenne - Agora',
 })
 const links: Ref<Link[]> = ref([{ to: '/', text: 'Accueil' }, { text: 'Participation citoyenne' }])
 </script>
