@@ -17,11 +17,11 @@ const expandedSectionId = ref('')
       </div>
 
       <div v-else-if="section.type=='richText'">
-        <p v-html="section.description"></p>
+        <div v-html="section.description"></div>
       </div>
 
       <div v-else-if="section.type=='quote'" class="fr-quote">
-        <p v-html="section.description"></p>
+        <div v-html="section.description"></div>
       </div>
 
       <div v-else-if="section.type=='focusNumber'" class="fr-callout">
