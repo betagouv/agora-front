@@ -84,7 +84,7 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
 
         <div v-if="qag.response.additionalInfo" class="additionnal-info">
           <span class="fr-text--lead fr-mb-4w">{{ qag.response.additionalInfo.title }}</span>
-          <p class="fr-mt-2w" v-html="qag.response.additionalInfo.description"></p>
+          <div class="fr-mt-2w" v-html="qag.response.additionalInfo.description"></div>
         </div>
 
 
@@ -94,7 +94,7 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
 
     <div class="text-response fr-mt-2w" v-if="qag.textResponse">
       <p class="fr-text--lead">{{ qag.textResponse.responseLabel }}</p>
-      <p class="fr-px-1w" v-html="qag.textResponse.responseText"></p>
+      <div class="fr-px-1w" v-html="qag.textResponse.responseText"></div>
     </div>
     <BandeauTelechargement class="fr-mt-2w">
       <div v-if="!qag.response && !qag.textResponse" v-html="texteSoutienWithUsername"/>
