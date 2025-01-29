@@ -55,7 +55,7 @@ const expandedSectionId = ref('')
 
 <style>
 .section {
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 video {
   max-height: 70vh;
