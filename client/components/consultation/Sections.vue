@@ -2,7 +2,7 @@
 import { Section } from '~/client/types/consultation/consultation';
 import { DsfrTranscription } from "@gouvminint/vue-dsfr";
 
-defineProps<{
+const props = defineProps<{
   sections: Section[]
 }>()
 
@@ -54,6 +54,9 @@ const expandedSectionId = ref('')
 </template>
 
 <style>
+.section {
+  margin-bottom: 5vh;
+}
 video {
   max-height: 70vh;
 }

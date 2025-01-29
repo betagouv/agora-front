@@ -19,6 +19,7 @@ export default interface Qag{
     videoWidth: number,
     videoHeight: number,
     transcription: string,
+    videoTitle: string,
     additionalInfo: { 
       title: string,
       description: string

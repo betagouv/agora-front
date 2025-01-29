@@ -54,7 +54,7 @@ const estSurLaPageLancement = props.consultation.goals != null
             <span class="fr-pl-1v" v-if="consultation.questionsInfo.participantCount == 0">Aucun participant</span>
             <span class="fr-pl-1v" v-else-if="consultation.questionsInfo.participantCount == 1">1 participant</span>
             <span class="fr-pl-1v" v-else>{{ consultation.questionsInfo.participantCount }} participants</span>
-            <div class="fr-mt-1w fr-ml-3w">
+            <div class="fr-mt-1w fr-ml-3w" v-if="estEnCours">
               <div class="progress-bar fr-mb-1w">
                 <div class="progress-value"
                      :style="{ width:  (consultation.questionsInfo.participantCount / consultation.questionsInfo.participantCountGoal) *100 + '%' }"></div>

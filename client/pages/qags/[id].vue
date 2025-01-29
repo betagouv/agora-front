@@ -61,9 +61,8 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
 
 
     <div class="video-response fr-mt-2w" v-if="qag.response">
-      <p class="fr-text--lead">
-        Réponse du gouvernement
-      </p>
+      <p class="fr-text--lead" v-if="qag.response.videoTitle">{{ qag.response.videoTitle }}</p>
+      <p class="fr-text--lead" v-else>Réponse du Gouvernement</p>
 
       <div class="fr-px-1w">
         Par <b>{{ qag.response.author }}</b>, le {{ new Date(qag.response.responseDate).toLocaleDateString("fr-FR") }}
@@ -86,10 +85,7 @@ const links: Link[] = [{to: '/', text: 'Accueil'}, {text: 'Questions citoyennes'
           <span class="fr-text--lead fr-mb-4w">{{ qag.response.additionalInfo.title }}</span>
           <div class="fr-mt-2w" v-html="qag.response.additionalInfo.description"></div>
         </div>
-
-
       </div>
-
     </div>
 
     <div class="text-response fr-mt-2w" v-if="qag.textResponse">
